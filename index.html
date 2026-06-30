@@ -89,29 +89,30 @@
     overflow:hidden;
     border-bottom:1px solid var(--panel-line);
   }
-  
-  /* WIDER & TALLER ANIMATED BARS */
+
+  /* WIDER & TALLER ANIMATED BARS — bars auto-stretch to fill the width */
   .eq{
     position:absolute;left:0;right:0;bottom:0;top:0;
-    display:flex;align-items:flex-end;justify-content:center;gap:10px; /* Wider gap */
-    opacity:.16;pointer-events:none;
+    display:flex;align-items:flex-end;justify-content:stretch;gap:10px;
+    opacity:.08;pointer-events:none;
     overflow:hidden;
+    padding:0 4px;
   }
   .eq span{
-    width:8px; /* Thicker bars */
+    flex:1 1 0;            /* each bar shares the width equally and stretches */
+    min-width:0;
     background:var(--accent);border-radius:4px 4px 0 0;
-    height:90%; /* Taller height */
+    height:55%;
     transform-origin:bottom;
-    animation:eqPulse 2.4s ease-in-out infinite;
+    animation:eqPulse 3.2s ease-in-out infinite;
     animation-delay:calc(var(--i) * 0.09s);
-    flex-shrink: 0;
   }
   @keyframes eqPulse{
-    0%,100%{transform:scaleY(.22);}
-    20%{transform:scaleY(.8);}
-    40%{transform:scaleY(.38);}
-    60%{transform:scaleY(1);}
-    80%{transform:scaleY(.5);}
+    0%,100%{transform:scaleY(.35);}
+    20%{transform:scaleY(.6);}
+    40%{transform:scaleY(.42);}
+    60%{transform:scaleY(.7);}
+    80%{transform:scaleY(.48);}
   }
   /* END BARS CSS */
 
@@ -284,7 +285,7 @@
     .services-grid{grid-template-columns:1fr;}
   }
   @media (prefers-reduced-motion:reduce){
-    .eq span{animation:none;transform:scaleY(.5);}
+    .eq span{animation:none;transform:scaleY(.45);}
     .rec-dot{animation:none;}
     .eyebrow,h1.name,.role,.tags,.contact-row{
       opacity:1;animation:none;
@@ -316,23 +317,6 @@
     <span style="--i:20"></span><span style="--i:21"></span><span style="--i:22"></span><span style="--i:23"></span>
     <span style="--i:24"></span><span style="--i:25"></span><span style="--i:26"></span><span style="--i:27"></span>
     <span style="--i:28"></span><span style="--i:29"></span><span style="--i:30"></span><span style="--i:31"></span>
-    <span style="--i:32"></span><span style="--i:33"></span><span style="--i:34"></span><span style="--i:35"></span>
-    <span style="--i:36"></span><span style="--i:37"></span><span style="--i:38"></span><span style="--i:39"></span>
-    <span style="--i:40"></span><span style="--i:41"></span><span style="--i:42"></span><span style="--i:43"></span>
-    <span style="--i:44"></span><span style="--i:45"></span><span style="--i:46"></span><span style="--i:47"></span>
-    <span style="--i:48"></span><span style="--i:49"></span><span style="--i:50"></span><span style="--i:51"></span>
-    <span style="--i:52"></span><span style="--i:53"></span><span style="--i:54"></span><span style="--i:55"></span>
-    <span style="--i:56"></span><span style="--i:57"></span><span style="--i:58"></span><span style="--i:59"></span>
-    <span style="--i:60"></span><span style="--i:61"></span><span style="--i:62"></span><span style="--i:63"></span>
-    <span style="--i:64"></span><span style="--i:65"></span><span style="--i:66"></span><span style="--i:67"></span>
-    <span style="--i:68"></span><span style="--i:69"></span><span style="--i:70"></span><span style="--i:71"></span>
-    <span style="--i:72"></span><span style="--i:73"></span><span style="--i:74"></span><span style="--i:75"></span>
-    <span style="--i:76"></span><span style="--i:77"></span><span style="--i:78"></span><span style="--i:79"></span>
-    <span style="--i:80"></span><span style="--i:81"></span><span style="--i:82"></span><span style="--i:83"></span>
-    <span style="--i:84"></span><span style="--i:85"></span><span style="--i:86"></span><span style="--i:87"></span>
-    <span style="--i:88"></span><span style="--i:89"></span><span style="--i:90"></span><span style="--i:91"></span>
-    <span style="--i:92"></span><span style="--i:93"></span><span style="--i:94"></span><span style="--i:95"></span>
-    <span style="--i:96"></span><span style="--i:97"></span><span style="--i:98"></span><span style="--i:99"></span>
   </div>
   <div class="wrap hero-inner">
     <p class="eyebrow"><span class="rec-dot" aria-hidden="true"></span>
@@ -431,7 +415,7 @@
         <span class="title">“Final Fantasy”</span>
         <span class="meta en">(13-track Alternative / Electronic)</span>
         <span class="meta zh" hidden>（13 首曲 · 另類流行 / 電子專輯）</span>
-        <a class="play" href="https://youtube.com/playlist?list=PLFmiDbU5b0L8OmX_6ke0Z8dZPgiact3n3&amp;si=A-Kxa2wYwqUD7AmH" target="_blank" rel="noopener" style="margin-left:auto;">▸ Listen</a>
+        <a class="play" href="https://youtube.com/playlist?list=PLFmiDbU5b0L8OmX_6ke0Z8dZPgiact3n3" target="_blank" rel="noopener" style="margin-left:auto;">▸ Listen</a>
       </div>
 
       <span class="singles-label"><span class="en">Singles</span><span class="zh" hidden>單曲</span></span>
