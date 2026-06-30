@@ -89,16 +89,22 @@
     overflow:hidden;
     border-bottom:1px solid var(--panel-line);
   }
+  
+  /* WIDER & TALLER ANIMATED BARS */
   .eq{
     position:absolute;left:0;right:0;bottom:0;top:0;
-    display:flex;align-items:flex-end;justify-content:center;gap:6px;
+    display:flex;align-items:flex-end;justify-content:center;gap:10px; /* Wider gap */
     opacity:.16;pointer-events:none;
+    overflow:hidden;
   }
   .eq span{
-    width:4px;background:var(--accent);border-radius:2px 2px 0 0;
-    height:75%;transform-origin:bottom;
+    width:8px; /* Thicker bars */
+    background:var(--accent);border-radius:4px 4px 0 0;
+    height:90%; /* Taller height */
+    transform-origin:bottom;
     animation:eqPulse 2.4s ease-in-out infinite;
     animation-delay:calc(var(--i) * 0.09s);
+    flex-shrink: 0;
   }
   @keyframes eqPulse{
     0%,100%{transform:scaleY(.22);}
@@ -107,6 +113,8 @@
     60%{transform:scaleY(1);}
     80%{transform:scaleY(.5);}
   }
+  /* END BARS CSS */
+
   .hero-inner{position:relative;z-index:1;}
   .eyebrow{
     display:inline-flex;align-items:center;gap:8px;
@@ -292,251 +300,4 @@
     <nav>
       <button class="lang-toggle" id="langToggle" type="button" aria-pressed="false">繁中</button>
       <a class="cta-mini" href="mailto:A8RECORDINGNYC@GMAIL.COM">
-        <span class="en">Contact</span><span class="zh" hidden>聯繫</span>
-      </a>
-    </nav>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="eq" aria-hidden="true">
-    <span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span><span style="--i:3"></span>
-    <span style="--i:4"></span><span style="--i:5"></span><span style="--i:6"></span><span style="--i:7"></span>
-    <span style="--i:8"></span><span style="--i:9"></span><span style="--i:10"></span><span style="--i:11"></span>
-    <span style="--i:12"></span><span style="--i:13"></span><span style="--i:14"></span><span style="--i:15"></span>
-    <span style="--i:16"></span><span style="--i:17"></span><span style="--i:18"></span><span style="--i:19"></span>
-    <span style="--i:20"></span><span style="--i:21"></span><span style="--i:22"></span><span style="--i:23"></span>
-    <span style="--i:24"></span><span style="--i:25"></span><span style="--i:26"></span><span style="--i:27"></span>
-    <span style="--i:28"></span><span style="--i:29"></span><span style="--i:30"></span><span style="--i:31"></span>
-    <span style="--i:32"></span><span style="--i:33"></span><span style="--i:34"></span><span style="--i:35"></span>
-    <span style="--i:36"></span><span style="--i:37"></span><span style="--i:38"></span><span style="--i:39"></span>
-    <span style="--i:40"></span><span style="--i:41"></span><span style="--i:42"></span><span style="--i:43"></span>
-    <span style="--i:44"></span><span style="--i:45"></span><span style="--i:46"></span><span style="--i:47"></span>
-  </div>
-  <div class="wrap hero-inner">
-    <p class="eyebrow"><span class="rec-dot" aria-hidden="true"></span>
-      <span class="en">A8 Recording · New York</span>
-      <span class="zh" hidden>A8 Recording · 紐約</span>
-    </p>
-    <h1 class="name">
-      <span class="en">Songs, written and produced.</span>
-      <span class="zh" hidden>歌曲，創作與製作。</span>
-    </h1>
-    <p class="role">
-      <span class="en">A cross-genre songwriting <span class="sep">&amp;</span> production house, built for international release</span>
-      <span class="zh" hidden>跨曲風的詞曲創作與製作工作室，專為國際發行而生</span>
-    </p>
-    <p class="tags">
-      <span class="en">R&amp;B · Neo-Soul · Afrobeat · Hiphop · Alternative Pop · Rock · Cinematic &amp; Immersive Scoring</span>
-      <span class="zh" hidden>R&amp;B · Neo-Soul · Afrobeat · 嘻哈 · 另類流行 · 搖滾 · 影視與沉浸式配樂</span>
-    </p>
-    <div class="contact-row">
-      <a class="contact-pill" href="mailto:A8RECORDINGNYC@GMAIL.COM">A8RECORDINGNYC@GMAIL.COM</a>
-      <a class="contact-pill" href="mailto:TOBYCANTONESE@GMAIL.COM">TOBYCANTONESE@GMAIL.COM</a>
-      <a class="contact-pill" href="tel:+15514144918">+1 551-414-4918</a>
-    </div>
-  </div>
-</section>
-
-<section class="profile">
-  <div class="wrap">
-    <p class="section-label"><span class="en">About</span><span class="zh" hidden>關於 A8</span></p>
-    <p class="en">A8 Recording is a New York production label and songwriting house working across pop, R&amp;B, and alternative music. We pair full studio production — engineering, vocal production, mixing, and mastering — with original songwriting and lyric composition built for international streaming, radio, and screen. Rooted in conservatory training in composition and jazz and modern music technology from The New School and NYU, A8 moves between commercial hooks and experimental, artist-defining records — with current work extending into interactive and narrative scoring for games.</p>
-    <p class="zh" hidden>A8 Recording 是一間位於紐約的製作廠牌與詞曲創作工作室，作品橫跨流行、R&amp;B 與另類音樂。我們將完整的錄音室製作 — 工程、人聲製作、混音與母帶 — 結合原創詞曲與歌詞創作，專為國際串流、廣播與影視市場打造。團隊根植於 The New School 與 NYU 的古典作曲、爵士與音樂科技訓練，作品在商業旋律與實驗性、定義藝人風格的創作之間自由游走，並持續拓展至遊戲互動與敘事配樂領域。</p>
-  </div>
-</section>
-
-<section class="services">
-  <div class="wrap">
-    <p class="section-label"><span class="en">Services</span><span class="zh" hidden>服務項目</span></p>
-    <div class="services-grid">
-      <div class="svc">
-        <span class="svc-mark" aria-hidden="true"></span>
-        <h3><span class="en">Songwriting &amp; Composition</span><span class="zh" hidden>詞曲與作曲</span></h3>
-        <p class="en">Original songs and compositions across pop, R&amp;B, Afrobeat, and alternative.</p>
-        <p class="zh" hidden>跨流行、R&amp;B、Afrobeat 與另類曲風的原創歌曲與作曲。</p>
-      </div>
-      <div class="svc">
-        <span class="svc-mark" aria-hidden="true"></span>
-        <h3><span class="en">Lyric Writing</span><span class="zh" hidden>歌詞創作</span></h3>
-        <p class="en">Native English-language lyrics built for international streaming and radio.</p>
-        <p class="zh" hidden>英文母語歌詞，專為國際串流與廣播打造。</p>
-      </div>
-      <div class="svc">
-        <span class="svc-mark" aria-hidden="true"></span>
-        <h3><span class="en">Production &amp; Engineering</span><span class="zh" hidden>製作與工程</span></h3>
-        <p class="en">Full record production and engineering, from first session to final master.</p>
-        <p class="zh" hidden>從首次錄音到最終母帶的完整唱片製作與工程。</p>
-      </div>
-      <div class="svc">
-        <span class="svc-mark" aria-hidden="true"></span>
-        <h3><span class="en">Vocal Production</span><span class="zh" hidden>人聲製作</span></h3>
-        <p class="en">Vocal arrangement, comping, and tuning that shape the performance.</p>
-        <p class="zh" hidden>人聲編排、剪輯與修音，雕琢每一段演出。</p>
-      </div>
-      <div class="svc">
-        <span class="svc-mark" aria-hidden="true"></span>
-        <h3><span class="en">Mixing &amp; Mastering</span><span class="zh" hidden>混音與母帶</span></h3>
-        <p class="en">Release-ready mixes and masters for streaming and sync.</p>
-        <p class="zh" hidden>適用於串流與 Sync 授權的成品混音與母帶。</p>
-      </div>
-      <div class="svc">
-        <span class="svc-mark" aria-hidden="true"></span>
-        <h3><span class="en">Scoring</span><span class="zh" hidden>配樂</span></h3>
-        <p class="en">Cinematic, immersive, and game scoring — including Venice-selected work.</p>
-        <p class="zh" hidden>電影、沉浸式與遊戲配樂，包含入選威尼斯影展之作品。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="credits">
-  <div class="wrap">
-    <p class="section-label"><span class="en">Selected Collaborations</span><span class="zh" hidden>合作作品</span></p>
-    <p class="collab-note en">Artists and projects A8 has worked with — in writing rooms, sessions, and the studio.</p>
-    <p class="collab-note zh" hidden>A8 曾參與合作的藝人與專案 — 涵蓋創作、製作與錄音室工作。</p>
-
-    <article class="session">
-      <div class="session-head">
-        <h3 class="artist-name">Zekiizo</h3>
-        <p class="genre-tag en">Alternative Pop · Electro-Pop · Dark Synth-Pop</p>
-        <p class="genre-tag zh" hidden>另類流行 / 電子流行 / 暗黑合成器流行</p>
-      </div>
-      <p class="standout en">Refining her dark, synth-driven alt-pop into sharper, dancefloor-ready hooks without losing the experimental edge.</p>
-      <p class="standout zh" hidden>將其暗黑氣聲的另類流行打磨出更鮮明、更適合舞池的旋律，同時保留鮮明的實驗性格。</p>
-
-      <div class="album-row">
-        <span class="tag-label">ALBUM</span>
-        <span class="title">“Final Fantasy”</span>
-        <span class="meta en">(13-track Alternative / Electronic)</span>
-        <span class="meta zh" hidden>（13 首曲 · 另類流行 / 電子專輯）</span>
-        <a class="play" href="https://youtube.com/playlist?list=PLFmiDbU5b0L8OmX_6ke0Z8dZPgiact3n3&amp;si=A-Kxa2wYwqUD7AmH" target="_blank" rel="noopener" style="margin-left:auto;">▸ Listen</a>
-      </div>
-
-      <span class="singles-label"><span class="en">Singles</span><span class="zh" hidden>單曲</span></span>
-      <ol class="track-list">
-        <li><a href="https://www.youtube.com/watch?v=HheNbxNj5eA" target="_blank" rel="noopener">
-          <span class="idx"></span><span class="t-title">SHOTGUN</span>
-          <span class="t-genre">Hyperpop / Dance Pop</span><span class="play">▸ Listen</span>
-        </a></li>
-        <li><a href="https://www.youtube.com/watch?v=gc5C1OjzzPA" target="_blank" rel="noopener">
-          <span class="idx"></span><span class="t-title">KISS</span>
-          <span class="t-genre en">Electro-Pop / Trance-Pop</span><span class="t-genre zh" hidden>電子流行 / Trance-Pop</span><span class="play">▸ Listen</span>
-        </a></li>
-        <li><a href="https://www.youtube.com/watch?v=B0QkWBW5o1Q" target="_blank" rel="noopener">
-          <span class="idx"></span><span class="t-title">Ricochet</span>
-          <span class="t-genre en">Dark Alt-Pop / Dance Trap</span><span class="t-genre zh" hidden>暗黑另類流行 / Dance Trap</span><span class="play">▸ Listen</span>
-        </a></li>
-        <li><a href="https://untitled.stream/library/project/8Cf3cV7HNGSS57Z9SdazQ" target="_blank" rel="noopener">
-          <span class="idx"></span><span class="t-title">Unreleased</span>
-          <span class="t-genre en">Alt-Rock / Emo Rock</span><span class="t-genre zh" hidden>另類搖滾 / Emo Rock</span><span class="play">▸ Listen</span>
-        </a></li>
-      </ol>
-    </article>
-
-    <article class="session">
-      <div class="session-head">
-        <h3 class="artist-name">Eric Leo</h3>
-        <p class="genre-tag en">R&amp;B · Neo-Soul · Afrobeat · Hiphop</p>
-        <p class="genre-tag zh" hidden>R&amp;B / Neo-Soul / Afrobeat / 嘻哈</p>
-      </div>
-      <p class="standout en">Cross-genre R&amp;B spanning Neo-Soul, Afrobeat, and Hiphop, anchored by a direct, melodic voice. “Rain” samples Wong Kar-wai’s In the Mood for Love.</p>
-      <p class="standout zh" hidden>跨曲風 R&amp;B 創作，涵蓋 Neo-Soul、Afrobeat 與嘻哈，旋律性強且情感直接。</p>
-
-      <div class="album-row">
-        <span class="tag-label">ALBUM</span>
-        <span class="title">“24 O’Clock”</span>
-        <span class="meta">(R&amp;B / Neo-Soul)</span>
-        <a class="play" href="https://on.soundcloud.com/xTGjSKMl7R88owU4l7" target="_blank" rel="noopener" style="margin-left:auto;">▸ Listen</a>
-      </div>
-
-      <span class="singles-label"><span class="en">Singles</span><span class="zh" hidden>單曲</span></span>
-      <ol class="track-list">
-        <li><a href="https://youtu.be/DWR2JrDC5kE" target="_blank" rel="noopener">
-          <span class="idx"></span><span class="t-title">Rain (Mood for Love)</span>
-          <span class="t-genre">Afrobeat / R&amp;B</span><span class="t-extra">feat. Toby Hysan</span><span class="play">▸ Listen</span>
-        </a></li>
-        <li><a href="https://youtu.be/Nkgu44pjRZI" target="_blank" rel="noopener">
-          <span class="idx"></span><span class="t-title">Angel Dust</span>
-          <span class="t-genre en">Trap / Psychedelic Pop</span><span class="t-genre zh" hidden>Trap / 迷幻流行</span><span class="play">▸ Listen</span>
-        </a></li>
-        <li><a href="https://untitled.stream/library/track/X1j9gSyvFvgaNFcsLyDgC" target="_blank" rel="noopener">
-          <span class="idx"></span><span class="t-title">GONE MiSSiNG</span>
-          <span class="t-genre en">Contemporary Hiphop / R&amp;B</span><span class="t-genre zh" hidden>當代嘻哈 / R&amp;B</span><span class="play">▸ Listen</span>
-        </a></li>
-      </ol>
-    </article>
-
-    <article class="session">
-      <div class="session-head">
-        <h3 class="artist-name">Chantal Camus</h3>
-        <p class="genre-tag en">Alternative Rock · Indie Rock</p>
-        <p class="genre-tag zh" hidden>另類搖滾 / 獨立搖滾</p>
-      </div>
-      <p class="standout en">Riff-driven alt-rock built on her vocalist–bassist identity; lead singles in official rotation on Texas radio.</p>
-      <p class="standout zh" hidden>以「主唱兼貝斯手」為核心的 riff 驅動另類搖滾；主打單曲獲德州主流電台歌單輪播。</p>
-
-      <span class="singles-label"><span class="en">Singles</span><span class="zh" hidden>單曲</span></span>
-      <ol class="track-list">
-        <li><a href="https://www.youtube.com/watch?v=Jo3j7008mDc" target="_blank" rel="noopener">
-          <span class="idx"></span><span class="t-title">Capital A</span>
-          <span class="t-genre en">Alt-Rock / Indie Rock</span><span class="t-genre zh" hidden>另類搖滾 / 獨立搖滾</span><span class="play">▸ Listen</span>
-        </a></li>
-        <li><a href="https://www.youtube.com/watch?v=OvG5b63NFkU" target="_blank" rel="noopener">
-          <span class="idx"></span><span class="t-title">Heartache</span>
-          <span class="t-genre">Emo Rock / Grunge</span><span class="play">▸ Listen</span>
-        </a></li>
-      </ol>
-    </article>
-
-    <article class="session film">
-      <div class="session-head">
-        <h3 class="artist-name">Echos of Ash Valley</h3>
-        <p class="genre-tag en">Cinematic Scoring · Venice Immersive 2024</p>
-        <p class="genre-tag zh" hidden>電影配樂 / 沉浸式科幻 · 2024 威尼斯沉浸式單元</p>
-      </div>
-      <p class="standout en">Lyric and vocal writing for the score of this immersive sci-fi film (dir. Shu Zhu) — official selection, Venice Immersive, La Biennale di Venezia (81st Venice International Film Festival).</p>
-      <p class="standout zh" hidden>為此沉浸式科幻 VR 電影（導演 Shu Zhu）之配樂創作歌詞與人聲；入選 2024 威尼斯影展沉浸式單元（第 81 屆威尼斯國際影展）。</p>
-      <a class="single-link" href="https://untitled.stream/library/project/uAwz0DsY9GpeebN4rsgYS" target="_blank" rel="noopener">▸ <span class="en">Listen</span><span class="zh" hidden>試聽</span></a>
-    </article>
-
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <p class="available en">Now booking <strong>songwriting, composition, and production sessions</strong> — for artists, labels, film, and games.</p>
-    <p class="available zh" hidden>現正接受 <strong>詞曲創作、作曲與製作案件</strong> 預約 — 藝人、唱片公司、影視與遊戲專案。</p>
-    <div class="contact-row">
-      <a class="contact-pill" href="mailto:A8RECORDINGNYC@GMAIL.COM">A8RECORDINGNYC@GMAIL.COM</a>
-      <a class="contact-pill" href="mailto:TOBYCANTONESE@GMAIL.COM">TOBYCANTONESE@GMAIL.COM</a>
-      <a class="contact-pill" href="tel:+15514144918">+1 551-414-4918</a>
-    </div>
-    <p class="foot-mark">A8RECORDINGNYC © <span id="year"></span></p>
-  </div>
-</footer>
-
-<script>
-  (function(){
-    var toggle = document.getElementById('langToggle');
-    var ens = document.querySelectorAll('.en');
-    var zhs = document.querySelectorAll('.zh');
-    function setLang(lang){
-      var isZh = lang === 'zh';
-      ens.forEach(function(el){ el.hidden = isZh; });
-      zhs.forEach(function(el){ el.hidden = !isZh; });
-      document.documentElement.lang = isZh ? 'zh-Hant' : 'en';
-      toggle.textContent = isZh ? 'EN' : '繁中';
-      toggle.setAttribute('aria-pressed', isZh ? 'true' : 'false');
-      toggle.dataset.lang = lang;
-    }
-    toggle.addEventListener('click', function(){
-      setLang(toggle.dataset.lang === 'zh' ? 'en' : 'zh');
-    });
-    toggle.dataset.lang = 'en';
-    document.getElementById('year').textContent = new Date().getFullYear();
-  })();
-</script>
-
-</body>
-</html>
+        <span class="en">Contact
