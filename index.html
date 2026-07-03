@@ -13,10 +13,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Manrope:wght@400;500;700;800&family=Space+Mono:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#121016;
-    --bg-soft:#17141C;
-    --panel:#1C1821;
-    --panel-line:#2D2731;
+    --bg:#000000;
+    --bg-soft:#0A0A0A;
+    --panel:#111111;
+    --panel-line:#333333;
     --text:#F4F1EC;
     --muted:#9A92A0;
     --muted-dim:#857E8C;
@@ -46,14 +46,14 @@
   p{margin:0;}
   img,svg{display:block;max-width:100%;}
   ::selection{background:var(--accent);color:#150C10;}
-  a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px;}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:0;}
 
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
 
   /* ---------- topbar ---------- */
   .topbar{
     position:sticky;top:0;z-index:50;
-    background:rgba(18,16,22,.82);
+    background:rgba(0,0,0,.82);
     backdrop-filter:blur(10px);
     border-bottom:1px solid var(--panel-line);
   }
@@ -70,15 +70,16 @@
   .lang-toggle{
     font-family:var(--mono);font-size:12px;letter-spacing:.06em;
     background:transparent;border:1px solid var(--panel-line);color:var(--muted);
-    padding:7px 12px;border-radius:999px;cursor:pointer;
+    padding:7px 12px;border-radius:0;cursor:pointer;
     transition:border-color .2s, color .2s;
   }
   .lang-toggle:hover{border-color:var(--accent);color:var(--text);}
   .cta-mini{
     font-family:var(--mono);font-size:12px;letter-spacing:.04em;
     background:var(--accent);color:#150C10;font-weight:700;
-    padding:8px 14px;border-radius:999px;
+    padding:8px 14px;border-radius:0;
     transition:opacity .2s;
+    text-transform: uppercase;
   }
   .cta-mini:hover{opacity:.85;}
 
@@ -90,18 +91,18 @@
     border-bottom:1px solid var(--panel-line);
   }
 
-  /* WIDER & TALLER ANIMATED BARS — bars auto-stretch to fill the width */
+  /* WIDER & TALLER ANIMATED BARS */
   .eq{
     position:absolute;left:0;right:0;bottom:0;top:0;
     display:flex;align-items:flex-end;justify-content:stretch;gap:10px;
-    opacity:.08;pointer-events:none;
+    opacity:.15;pointer-events:none;
     overflow:hidden;
     padding:0 4px;
   }
   .eq span{
-    flex:1 1 0;            /* each bar shares the width equally and stretches */
+    flex:1 1 0;
     min-width:0;
-    background:var(--accent);border-radius:4px 4px 0 0;
+    background:var(--accent);border-radius:0;
     height:55%;
     transform-origin:bottom;
     animation:eqPulse 3.2s ease-in-out infinite;
@@ -125,7 +126,7 @@
     opacity:0;animation:fadeUp .7s ease forwards;animation-delay:.05s;
   }
   .rec-dot{
-    width:8px;height:8px;border-radius:50%;background:var(--accent);
+    width:8px;height:8px;border-radius:0;background:var(--accent);
     box-shadow:0 0 0 0 var(--accent-line);
     animation:recPulse 1.8s ease-in-out infinite;
   }
@@ -151,6 +152,7 @@
     font-family:var(--mono);font-size:13px;color:var(--muted);
     margin-bottom:34px;letter-spacing:.01em;
     opacity:0;animation:fadeUp .7s ease forwards;animation-delay:.3s;
+    text-transform: uppercase;
   }
   .contact-row{
     display:flex;flex-wrap:wrap;gap:10px;
@@ -159,10 +161,11 @@
   .contact-pill{
     font-family:var(--mono);font-size:12.5px;
     border:1px solid var(--panel-line);color:var(--muted);
-    padding:9px 14px;border-radius:999px;
-    transition:border-color .2s,color .2s;
+    padding:9px 14px;border-radius:0;
+    transition:border-color .1s,color .1s, background .1s;
+    text-transform: uppercase;
   }
-  .contact-pill:hover{border-color:var(--accent);color:var(--text);}
+  .contact-pill:hover{border-color:var(--accent);color:var(--accent); background:var(--accent-soft);}
   @keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
 
   /* ---------- sections generic ---------- */
@@ -185,6 +188,7 @@
   .genre-tag{
     font-family:var(--mono);font-size:12px;color:var(--muted);
     letter-spacing:.02em;
+    text-transform: uppercase;
   }
   .standout{
     color:var(--muted);font-size:14.5px;line-height:1.6;
@@ -193,7 +197,7 @@
   .album-row{
     display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;
     padding:12px 16px;background:var(--panel);
-    border:1px solid var(--panel-line);border-radius:8px;
+    border:1px solid var(--panel-line);border-radius:0;
     margin-bottom:16px;
   }
   .tag-label{
@@ -201,18 +205,19 @@
     color:var(--accent);font-weight:700;
   }
   .album-row .title{font-weight:700;font-size:15px;}
-  .album-row .meta{font-size:13px;color:var(--muted);}
+  .album-row .meta{font-size:13px;color:var(--muted); font-family: var(--mono);}
   .singles-label{
     font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;
     color:var(--muted-dim);margin-bottom:8px;display:block;
+    text-transform: uppercase;
   }
   .track-list{counter-reset:track;}
   .track-list li{counter-increment:track;}
   .track-list a{
     display:flex;align-items:center;gap:14px;
-    padding:11px 14px;border-radius:6px;
+    padding:11px 14px;border-radius:0;
     border-left:2px solid transparent;
-    transition:background .18s,border-color .18s,padding-left .18s;
+    transition:background .1s,border-color .1s,padding-left .1s;
   }
   .track-list a:hover{
     background:var(--panel);border-left-color:var(--accent);padding-left:18px;
@@ -223,19 +228,24 @@
   }
   .track-list .idx::before{content:counter(track,decimal-leading-zero);}
   .track-list .t-title{font-weight:700;font-size:14.5px;flex-shrink:0;}
-  .track-list .t-genre{font-size:12.5px;color:var(--muted);flex:1;min-width:120px;}
+  .track-list .t-genre{font-family:var(--mono);font-size:11.5px;color:var(--muted);flex:1;min-width:120px; text-transform:uppercase;}
   .track-list .t-extra{font-size:12px;color:var(--muted-dim);}
   .play{
     font-family:var(--mono);font-size:11.5px;color:var(--accent);
     flex-shrink:0;white-space:nowrap;
+    text-transform: uppercase;
   }
-  a.play:hover{text-decoration:underline;}
+  a.play:hover{text-decoration:none;}
+  .track-list a:hover .play:before { content: "[ "; }
+  .track-list a:hover .play:after { content: " ]"; }
+
   .session.film .standout{font-style:normal;color:#D9D4DD;font-size:15px;}
   .session.film .single-link{
     display:inline-flex;align-items:center;gap:8px;
     font-family:var(--mono);font-size:12.5px;color:var(--accent);
-    border:1px solid var(--accent-line);padding:9px 16px;border-radius:999px;
-    margin-top:6px;transition:background .2s;
+    border:1px solid var(--accent-line);padding:9px 16px;border-radius:0;
+    margin-top:6px;transition:background .1s;
+    text-transform: uppercase;
   }
   .session.film .single-link:hover{background:var(--accent-soft);}
 
@@ -245,10 +255,10 @@
   }
   .svc{
     background:var(--panel);border:1px solid var(--panel-line);
-    border-radius:10px;padding:22px 22px 24px;
-    transition:border-color .2s,background .2s;
+    border-radius:0;padding:22px 22px 24px;
+    transition:border-color .1s,background .1s;
   }
-  .svc:hover{border-color:var(--accent-line);background:var(--bg-soft);}
+  .svc:hover{border-color:var(--accent);background:var(--bg-soft);}
   .svc-mark{display:block;width:20px;height:2px;background:var(--accent);margin-bottom:13px;}
   .svc h3{font-family:var(--body);font-weight:800;font-size:15.5px;margin-bottom:7px;}
   .svc p{font-size:13.5px;color:var(--muted);line-height:1.55;}
@@ -290,6 +300,96 @@
     .eyebrow,h1.name,.role,.tags,.contact-row{
       opacity:1;animation:none;
     }
+  }
+
+  /* POPUP CONTACT WINDOW STYLES - A8 TECH VIBE */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    padding: 20px;
+  }
+  .modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .modal-window {
+    background: var(--bg);
+    border: 1px solid var(--accent-line);
+    width: 100%;
+    max-width: 480px;
+    padding: 40px;
+    position: relative;
+    transform: translateY(15px);
+    transition: transform 0.2s ease;
+    border-radius: 0;
+    box-shadow: 0 0 40px rgba(255, 59, 110, 0.05);
+  }
+  .modal-overlay.active .modal-window {
+    transform: translateY(0);
+  }
+  .modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 11px;
+    cursor: pointer;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    transition: color .2s;
+  }
+  .modal-close:hover { color: var(--accent); }
+  .modal-form { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
+  .modal-form input, .modal-form textarea {
+    width: 100%;
+    padding: 14px;
+    background: var(--panel);
+    border: 1px solid var(--panel-line);
+    color: var(--text);
+    font-family: var(--mono); 
+    font-size: 13px;
+    outline: none;
+    border-radius: 0;
+    transition: border-color .2s;
+  }
+  .modal-form input:focus, .modal-form textarea:focus { border-color: var(--accent); }
+  .modal-form textarea { resize: none; }
+  .modal-submit {
+    align-self: flex-start;
+    background: var(--accent);
+    color: #150C10;
+    border: none;
+    padding: 12px 28px;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 0;
+    transition: opacity .2s;
+  }
+  .modal-submit:hover { opacity: 0.85; }
+  .modal-header-text {
+    font-family: var(--mono);
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
   }
 </style>
 </head>
@@ -337,8 +437,6 @@
     </p>
     <div class="contact-row">
       <a class="contact-pill" href="mailto:A8RECORDINGNYC@GMAIL.COM">A8RECORDINGNYC@GMAIL.COM</a>
-      <a class="contact-pill" href="mailto:TOBYCANTONESE@GMAIL.COM">TOBYCANTONESE@GMAIL.COM</a>
-      <a class="contact-pill" href="tel:+15514144918">+1 551-414-4918</a>
     </div>
   </div>
 </section>
@@ -514,12 +612,28 @@
     <p class="available zh" hidden>現正接受 <strong>詞曲創作、作曲與製作案件</strong> 預約 — 藝人、唱片公司、影視與遊戲專案。</p>
     <div class="contact-row">
       <a class="contact-pill" href="mailto:A8RECORDINGNYC@GMAIL.COM">A8RECORDINGNYC@GMAIL.COM</a>
-      <a class="contact-pill" href="mailto:TOBYCANTONESE@GMAIL.COM">TOBYCANTONESE@GMAIL.COM</a>
-      <a class="contact-pill" href="tel:+15514144918">+1 551-414-4918</a>
     </div>
     <p class="foot-mark">A8RECORDINGNYC © <span id="year"></span></p>
   </div>
 </footer>
+
+<!-- WEB3FORMS POPUP WINDOW -->
+<div class="modal-overlay" id="contactModal">
+  <div class="modal-window">
+    <button class="modal-close" id="closeModal" aria-label="Close window">[ X ] CLOSE</button>
+    <p class="modal-header-text">INITIATE_CONTACT</p>
+    <form action="https://api.web3forms.com/submit" method="POST" class="modal-form">
+      <input type="hidden" name="access_key" value="e2e60c07-6941-42dc-ab98-d3d7e046c1a5">
+      <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+      
+      <input type="text" name="name" placeholder="NAME / ALIAS" required>
+      <input type="email" name="email" placeholder="EMAIL_ADDRESS" required>
+      <textarea name="message" placeholder="ENTER_MESSAGE..." rows="5" required></textarea>
+      
+      <button type="submit" class="modal-submit">TRANSMIT</button>
+    </form>
+  </div>
+</div>
 
 <script>
   (function(){
@@ -540,6 +654,32 @@
     });
     toggle.dataset.lang = 'en';
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // MODAL WINDOW SCRIPT LOGIC
+    var modal = document.getElementById('contactModal');
+    var closeBtn = document.getElementById('closeModal');
+    var mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
+
+    mailtoLinks.forEach(function(link) {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function hideModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    closeBtn.addEventListener('click', hideModal);
+    modal.addEventListener('click', function(event) {
+      if (event.target === modal) hideModal();
+    });
+    window.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && modal.classList.contains('active')) hideModal();
+    });
   })();
 </script>
 
