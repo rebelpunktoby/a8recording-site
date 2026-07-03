@@ -231,33 +231,44 @@
     flex-shrink:0;white-space:nowrap;
   }
   a.play:hover{text-decoration:underline;}
+  
+  /* SINGLE LINK BUTTON STYLE (GLOBAL) */
   .session.film .standout{font-style:normal;color:#D9D4DD;font-size:15px;}
-  .session.film .single-link{
+  .single-link{
     display:inline-flex;align-items:center;gap:8px;
     font-family:var(--mono);font-size:12.5px;color:var(--accent);
     border:1px solid var(--accent-line);padding:9px 16px;border-radius:999px;
     margin-top:6px;transition:background .2s;
   }
-  .session.film .single-link:hover{background:var(--accent-soft);}
+  .single-link:hover{background:var(--accent-soft);}
 
-  /* ---------- reel (game trailers) ---------- */
+  /* ---------- STACKED REEL LIST (game trailers) ---------- */
   .reel-list{counter-reset:reel;margin-top:2px;}
-  .reel-list li{counter-increment:reel;}
-  .reel-list a{
+  .reel-item{
+    counter-increment:reel;
     display:flex;align-items:center;gap:16px;
     padding:13px 14px;border-radius:6px;
     border-left:2px solid transparent;
     transition:background .18s,border-color .18s,padding-left .18s;
   }
-  .reel-list a:hover{background:var(--panel);border-left-color:var(--accent);padding-left:18px;}
-  .reel-list .r-idx{font-family:var(--mono);font-size:11px;color:var(--muted-dim);width:20px;flex-shrink:0;}
-  .reel-list .r-idx::before{content:counter(reel,decimal-leading-zero);}
+  .reel-item:hover{background:var(--panel);border-left-color:var(--accent);padding-left:18px;}
+  .reel-item .r-idx{font-family:var(--mono);font-size:11px;color:var(--muted-dim);width:20px;flex-shrink:0;}
+  .reel-item .r-idx::before{content:counter(reel,decimal-leading-zero);}
   .reel-main{display:flex;flex-direction:column;gap:3px;flex:1;min-width:0;}
   .reel-title{font-weight:700;font-size:14.5px;line-height:1.3;}
   .reel-title .r-cn{color:var(--muted);font-weight:500;font-size:13px;margin-left:6px;}
   .reel-meta{font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:.01em;}
-  .reel-list .play{align-self:center;}
-  @media (max-width:640px){ .reel-list a{align-items:flex-start;} .reel-list .play{align-self:flex-start;margin-top:2px;} }
+  .reel-actions{display:flex;gap:8px;align-items:center;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end;}
+  .reel-btn{
+    font-family:var(--mono);font-size:11px;color:var(--accent);
+    padding:6px 12px;border:1px solid var(--panel-line);border-radius:999px;
+    transition:border-color .2s, background .2s;white-space:nowrap;
+  }
+  .reel-btn:hover{border-color:var(--accent);background:var(--accent-soft);}
+  @media (max-width:640px){ 
+    .reel-item{align-items:flex-start;flex-wrap:wrap;} 
+    .reel-actions{margin-left:36px;width:calc(100% - 36px);justify-content:flex-start;margin-top:4px;}
+  }
 
   /* ---------- services ---------- */
   .services-grid{
@@ -272,16 +283,6 @@
   .svc-mark{display:block;width:20px;height:2px;background:var(--accent);margin-bottom:13px;}
   .svc h3{font-family:var(--body);font-weight:800;font-size:15.5px;margin-bottom:7px;}
   .svc p{font-size:13.5px;color:var(--muted);line-height:1.55;}
-
-  /* ---------- education ---------- */
-  .edu-list li{
-    display:flex;flex-wrap:wrap;gap:8px;
-    padding:13px 0;border-top:1px solid var(--panel-line);
-    font-size:14.5px;
-  }
-  .edu-list li:first-child{border-top:none;}
-  .edu-list .school{font-weight:700;}
-  .edu-list .degree{color:var(--muted);}
 
   /* ---------- footer ---------- */
   footer{padding:56px 0 80px;border-bottom:none;}
@@ -677,17 +678,7 @@
       </div>
       <p class="standout en">Electronic-style music for the idle JRPG's promotional video.</p>
       <p class="standout zh" hidden>為此放置類 JRPG 之宣傳影片製作電子風格配樂。</p>
-      
-      <ol class="reel-list">
-        <li><a href="https://www.youtube.com/watch?v=Rf8m7lJfqpE" target="_blank" rel="noopener">
-          <span class="r-idx"></span>
-          <span class="reel-main">
-            <span class="reel-title">Official Promotional PV</span>
-            <span class="reel-meta">Electronic / Cyberpunk</span>
-          </span>
-          <span class="play">▸ <span class="en">Watch</span><span class="zh" hidden>觀看</span></span>
-        </a></li>
-      </ol>
+      <a class="single-link" href="https://www.youtube.com/watch?v=Rf8m7lJfqpE" target="_blank" rel="noopener">▸ <span class="en">Watch</span><span class="zh" hidden>觀看</span></a>
     </article>
 
   </div>
