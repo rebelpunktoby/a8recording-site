@@ -174,6 +174,19 @@
   .profile p{font-size:16.5px;line-height:1.75;color:#D9D4DD;max-width:64ch;}
   .collab-note{font-size:14px;color:var(--muted);margin:-8px 0 26px;max-width:60ch;font-style:italic;}
 
+  /* ---------- work filters ---------- */
+  .work-filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px;}
+  .chip{
+    font-family:var(--mono);font-size:12px;letter-spacing:.03em;
+    background:transparent;border:1px solid var(--panel-line);color:var(--muted);
+    padding:8px 14px;border-radius:999px;cursor:pointer;
+    transition:border-color .2s,color .2s,background .2s;
+  }
+  .chip:hover{border-color:var(--accent);color:var(--text);}
+  .chip.active{background:var(--accent);border-color:var(--accent);color:#150C10;font-weight:700;}
+  .session[hidden]{display:none;}
+  .work-empty{display:none;color:var(--muted);font-size:14px;font-style:italic;padding:8px 0 4px;}
+
   /* ---------- credits / sessions ---------- */
   .session{padding:30px 0;border-top:1px solid var(--panel-line);}
   .session:first-of-type{border-top:none;padding-top:6px;}
@@ -242,33 +255,24 @@
   }
   .single-link:hover{background:var(--accent-soft);}
 
-  /* ---------- STACKED REEL LIST (game trailers) ---------- */
+  /* ---------- reel (game trailers) ---------- */
   .reel-list{counter-reset:reel;margin-top:2px;}
-  .reel-item{
-    counter-increment:reel;
+  .reel-list li{counter-increment:reel;}
+  .reel-list a{
     display:flex;align-items:center;gap:16px;
     padding:13px 14px;border-radius:6px;
     border-left:2px solid transparent;
     transition:background .18s,border-color .18s,padding-left .18s;
   }
-  .reel-item:hover{background:var(--panel);border-left-color:var(--accent);padding-left:18px;}
-  .reel-item .r-idx{font-family:var(--mono);font-size:11px;color:var(--muted-dim);width:20px;flex-shrink:0;}
-  .reel-item .r-idx::before{content:counter(reel,decimal-leading-zero);}
+  .reel-list a:hover{background:var(--panel);border-left-color:var(--accent);padding-left:18px;}
+  .reel-list .r-idx{font-family:var(--mono);font-size:11px;color:var(--muted-dim);width:20px;flex-shrink:0;}
+  .reel-list .r-idx::before{content:counter(reel,decimal-leading-zero);}
   .reel-main{display:flex;flex-direction:column;gap:3px;flex:1;min-width:0;}
   .reel-title{font-weight:700;font-size:14.5px;line-height:1.3;}
   .reel-title .r-cn{color:var(--muted);font-weight:500;font-size:13px;margin-left:6px;}
   .reel-meta{font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:.01em;}
-  .reel-actions{display:flex;gap:8px;align-items:center;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end;}
-  .reel-btn{
-    font-family:var(--mono);font-size:11px;color:var(--accent);
-    padding:6px 12px;border:1px solid var(--panel-line);border-radius:999px;
-    transition:border-color .2s, background .2s;white-space:nowrap;
-  }
-  .reel-btn:hover{border-color:var(--accent);background:var(--accent-soft);}
-  @media (max-width:640px){ 
-    .reel-item{align-items:flex-start;flex-wrap:wrap;} 
-    .reel-actions{margin-left:36px;width:calc(100% - 36px);justify-content:flex-start;margin-top:4px;}
-  }
+  .reel-list .play{align-self:center;}
+  @media (max-width:640px){ .reel-list a{align-items:flex-start;} .reel-list .play{align-self:flex-start;margin-top:2px;} }
 
   /* ---------- services ---------- */
   .services-grid{
@@ -451,13 +455,21 @@
   </div>
 </section>
 
-<section class="credits">
+<section class="credits work-section">
   <div class="wrap">
-    <p class="section-label"><span class="en">Selected Collaborations</span><span class="zh" hidden>合作作品</span></p>
-    <p class="collab-note en">Artists and projects A8 has worked with — in writing rooms, sessions, and the studio.</p>
-    <p class="collab-note zh" hidden>A8 曾參與合作的藝人與專案 — 涵蓋創作、製作與錄音室工作。</p>
+    <p class="section-label"><span class="en">Selected Work</span><span class="zh" hidden>精選作品</span></p>
+    <p class="collab-note en">A selection of the artists, records, and scores A8 has worked on and contributed to.</p>
+    <p class="collab-note zh" hidden>A8 曾參與創作與製作的藝人、作品與配樂精選。</p>
 
-    <article class="session">
+    <div class="work-filters" id="workFilters">
+      <button class="chip active" type="button" data-filter="all"><span class="en">All</span><span class="zh" hidden>全部</span></button>
+      <button class="chip" type="button" data-filter="poprnb"><span class="en">Pop &amp; R&amp;B</span><span class="zh" hidden>流行 &amp; R&amp;B</span></button>
+      <button class="chip" type="button" data-filter="electronic"><span class="en">Electronic</span><span class="zh" hidden>電子</span></button>
+      <button class="chip" type="button" data-filter="rock"><span class="en">Rock</span><span class="zh" hidden>搖滾</span></button>
+      <button class="chip" type="button" data-filter="filmgames"><span class="en">Film &amp; Games</span><span class="zh" hidden>影視 &amp; 遊戲</span></button>
+    </div>
+
+    <article class="session" data-cat="poprnb electronic">
       <div class="session-head">
         <h3 class="artist-name">Zekiizo</h3>
         <p class="genre-tag en">Alternative Pop · Electro-Pop · Dark Synth-Pop</p>
@@ -495,7 +507,7 @@
       </ol>
     </article>
 
-    <article class="session">
+    <article class="session" data-cat="poprnb">
       <div class="session-head">
         <h3 class="artist-name">Eric Leo</h3>
         <p class="genre-tag en">R&amp;B · Neo-Soul · Afrobeat · Hiphop</p>
@@ -528,7 +540,7 @@
       </ol>
     </article>
 
-    <article class="session">
+    <article class="session" data-cat="electronic">
       <div class="session-head">
         <h3 class="artist-name">Wing</h3>
         <p class="genre-tag en">Dubstep · EDM · Pop  ·  Producer</p>
@@ -554,7 +566,7 @@
       </ol>
     </article>
 
-    <article class="session">
+    <article class="session" data-cat="rock">
       <div class="session-head">
         <h3 class="artist-name">Chantal Camus</h3>
         <p class="genre-tag en">Alternative Rock · Indie Rock</p>
@@ -576,16 +588,7 @@
       </ol>
     </article>
 
-  </div>
-</section>
-
-<section class="media">
-  <div class="wrap">
-    <p class="section-label"><span class="en">Film, Games &amp; Scoring</span><span class="zh" hidden>影視・遊戲・配樂</span></p>
-    <p class="collab-note en">Screen and interactive projects A8 has contributed music to.</p>
-    <p class="collab-note zh" hidden>A8 曾參與配樂的影視與遊戲專案。</p>
-
-    <article class="session film">
+    <article class="session film" data-cat="filmgames">
       <div class="session-head">
         <h3 class="artist-name">Echos of Ash Valley</h3>
         <p class="genre-tag en">Cinematic Scoring · Venice Immersive 2024</p>
@@ -593,10 +596,12 @@
       </div>
       <p class="standout en">Lyric and vocal writing for the score of this immersive sci-fi film (dir. Shu Zhu) — official selection, Venice Immersive, La Biennale di Venezia (81st Venice International Film Festival).</p>
       <p class="standout zh" hidden>為此沉浸式科幻 VR 電影（導演 Shu Zhu）之配樂創作歌詞與人聲；入選 2024 威尼斯影展沉浸式單元（第 81 屆威尼斯國際影展）。</p>
-      <a class="single-link" href="https://untitled.stream/library/project/uAwz0DsY9GpeebN4rsgYS" target="_blank" rel="noopener">▸ <span class="en">Listen</span><span class="zh" hidden>試聽</span></a>
+      <span class="reel-links" style="margin-top:8px;">
+        <a class="play" href="https://untitled.stream/library/project/uAwz0DsY9GpeebN4rsgYS" target="_blank" rel="noopener">▸ <span class="en">Listen</span><span class="zh" hidden>試聽</span></a>
+      </span>
     </article>
 
-    <article class="session">
+    <article class="session" data-cat="filmgames">
       <div class="session-head">
         <h3 class="artist-name">Wuthering Waves <span class="cjk-alt">鳴潮</span></h3>
         <p class="genre-tag en">Trailer &amp; Promotional Scoring · Kuro Games</p>
@@ -670,9 +675,9 @@
       </ol>
     </article>
 
-    <article class="session">
+    <article class="session film" data-cat="filmgames" style="animation: fadeUp .7s ease forwards; opacity: 0;">
       <div class="session-head">
-        <h3 class="artist-name">Idle Huntress: Girl's Land <span class="cjk-alt">ドラゴンとガールズ交響曲</span></h3>
+        <h3 class="artist-name">Idle Huntress: Girl's Land — 9周年記念PV「異変」 <span class="cjk-alt">ドラゴンとガールズ交響曲</span></h3>
         <p class="genre-tag en">Game PV Scoring · Electronic · Cyberpunk</p>
         <p class="genre-tag zh" hidden>遊戲 PV 配樂 · 電子 · 賽博龐克</p>
       </div>
@@ -680,6 +685,8 @@
       <p class="standout zh" hidden>為此放置類 JRPG 之宣傳影片製作電子風格配樂。</p>
       <a class="single-link" href="https://www.youtube.com/watch?v=Rf8m7lJfqpE" target="_blank" rel="noopener">▸ <span class="en">Watch</span><span class="zh" hidden>觀看</span></a>
     </article>
+
+    <p class="work-empty" id="workEmpty"><span class="en">No work in this category yet.</span><span class="zh" hidden>此分類暫無作品。</span></p>
 
   </div>
 </section>
@@ -731,6 +738,28 @@
     });
     toggle.dataset.lang = 'en';
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // WORK FILTER LOGIC
+    var filterBar = document.getElementById('workFilters');
+    if (filterBar) {
+      var chips = filterBar.querySelectorAll('.chip');
+      var sessions = document.querySelectorAll('.session[data-cat]');
+      var emptyMsg = document.getElementById('workEmpty');
+      filterBar.addEventListener('click', function(e){
+        var chip = e.target.closest('.chip');
+        if (!chip) return;
+        var f = chip.dataset.filter;
+        chips.forEach(function(c){ c.classList.toggle('active', c === chip); });
+        var visible = 0;
+        sessions.forEach(function(s){
+          var cats = (s.getAttribute('data-cat') || '').split(' ');
+          var show = (f === 'all') || cats.indexOf(f) !== -1;
+          s.hidden = !show;
+          if (show) visible++;
+        });
+        if (emptyMsg) emptyMsg.style.display = visible === 0 ? 'block' : 'none';
+      });
+    }
 
     // MODAL WINDOW SCRIPT LOGIC
     var modal = document.getElementById('contactModal');
