@@ -230,14 +230,16 @@
     flex-shrink:0;white-space:nowrap;
   }
   a.play:hover{text-decoration:underline;}
+  
+  /* SINGLE LINK BUTTON STYLE (GLOBAL) */
   .session.film .standout{font-style:normal;color:#D9D4DD;font-size:15px;}
-  .session.film .single-link{
+  .single-link{
     display:inline-flex;align-items:center;gap:8px;
     font-family:var(--mono);font-size:12.5px;color:var(--accent);
     border:1px solid var(--accent-line);padding:9px 16px;border-radius:999px;
     margin-top:6px;transition:background .2s;
   }
-  .session.film .single-link:hover{background:var(--accent-soft);}
+  .single-link:hover{background:var(--accent-soft);}
 
   /* ---------- STACKED REEL LIST (game trailers) ---------- */
   .reel-list{counter-reset:reel;margin-top:2px;}
@@ -280,6 +282,16 @@
   .svc-mark{display:block;width:20px;height:2px;background:var(--accent);margin-bottom:13px;}
   .svc h3{font-family:var(--body);font-weight:800;font-size:15.5px;margin-bottom:7px;}
   .svc p{font-size:13.5px;color:var(--muted);line-height:1.55;}
+
+  /* ---------- education ---------- */
+  .edu-list li{
+    display:flex;flex-wrap:wrap;gap:8px;
+    padding:13px 0;border-top:1px solid var(--panel-line);
+    font-size:14.5px;
+  }
+  .edu-list li:first-child{border-top:none;}
+  .edu-list .school{font-weight:700;}
+  .edu-list .degree{color:var(--muted);}
 
   /* ---------- footer ---------- */
   footer{padding:56px 0 80px;border-bottom:none;}
