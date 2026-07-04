@@ -172,6 +172,12 @@
     color:var(--accent);text-transform:uppercase;margin-bottom:22px;
   }
   .profile p{font-size:16.5px;line-height:1.75;color:#D9D4DD;max-width:64ch;}
+  .profile p + p{margin-top:16px;}
+  .profile .lede{
+    font-size:20px;font-weight:600;line-height:1.5;color:var(--text);
+    max-width:38ch;letter-spacing:-.005em;
+  }
+  .profile .detail{font-size:15.5px;color:var(--muted);max-width:60ch;}
   .collab-note{font-size:14px;color:var(--muted);margin:-8px 0 26px;max-width:60ch;font-style:italic;}
 
   /* ---------- work filters ---------- */
@@ -333,7 +339,11 @@
     transition:border-color .2s,background .2s;
   }
   .svc:hover{border-color:var(--accent-line);background:var(--bg-soft);}
-  .svc-mark{display:block;width:20px;height:2px;background:var(--accent);margin-bottom:13px;}
+  .svc::before{
+    content:"";
+    display:block;width:8px;height:8px;border-radius:50%;
+    background:var(--accent);margin-bottom:14px;
+  }
   .svc h3{font-family:var(--body);font-weight:800;font-size:15.5px;margin-bottom:7px;}
   .svc p{font-size:13.5px;color:var(--muted);line-height:1.55;}
 
@@ -431,16 +441,16 @@
   </div>
   <div class="wrap hero-inner">
     <p class="eyebrow"><span class="rec-dot" aria-hidden="true"></span>
-      <span class="en">A8 Recording · New York</span>
-      <span class="zh" hidden>A8 Recording · 紐約</span>
+      <span class="en">A8RecordingNYC</span>
+      <span class="zh" hidden>A8RecordingNYC</span>
     </p>
     <h1 class="name">
       <span class="en">Songs, written and produced.</span>
-      <span class="zh" hidden>歌曲，創作與製作。</span>
+      <span class="zh" hidden>創作於此，迴響世界。</span>
     </h1>
     <p class="role">
-      <span class="en">A cross-genre songwriting <span class="sep">&amp;</span> production house, built for international release</span>
-      <span class="zh" hidden>跨曲風的詞曲創作與製作工作室，專為國際發行而生</span>
+      <span class="en">A cross-genre songwriting <span class="sep">&amp;</span> production house, built for the world stage</span>
+      <span class="zh" hidden>跨曲風的詞曲創作與製作工作室，為世界舞台而生</span>
     </p>
     <p class="tags">
       <span class="en">R&amp;B · Neo-Soul · Dance · Afrobeat · Hiphop · Alternative Pop · Rock · Cinematic &amp; Immersive Scoring</span>
@@ -455,8 +465,10 @@
 <section class="profile">
   <div class="wrap">
     <p class="section-label"><span class="en">About</span><span class="zh" hidden>關於 A8</span></p>
-    <p class="en">A full production house and songwriting label, A8 Recording bridges commercial mainstream appeal with experimental sound. We deliver full-suite studio production—from initial tracking to final master—alongside original songwriting and lyric architecture optimized for international release, broadcast, and screen. Backed by backgrounds in jazz, composition, and music technology from The New School and NYU, A8 balances chart-ready hooks with avant-garde, artist-defining records, alongside interactive scoring for modern games.</p>
-    <p class="zh" hidden>A8 Recording 始於紐約的音樂製作廠牌與詞曲創作工作室，作品橫跨流行、電子與實驗音樂。我們將完整的錄音製作 — 工程、混音與母帶 — 結合原創詞曲創作，專為國際標準串流、廣播與影視市場打造。團隊根植於 The New School 與 NYU 的作曲、爵士與音樂科技訓練，作品在商業與實驗性、定義藝人風格的創作之間自由游走，並持續拓展至遊戲互動與銀幕敘事配樂領域。</p>
+    <p class="en lede">A8 Recording is a production house and songwriting label built to balance mainstream appeal with experimental sound. Founded in New York, we now write, produce, and score across borders.</p>
+    <p class="en detail">Full studio production — from first tracking session to final master — paired with original songwriting and lyric writing for international release, broadcast, and screen. Rooted in jazz, composition, and music technology training from The New School and NYU, A8 pairs chart-ready hooks with avant-garde, artist-defining records, and extends into interactive scoring for modern games.</p>
+    <p class="zh lede" hidden>A8 Recording 是一間致力於在主流吸引力與實驗聲響之間取得平衡的音樂製作廠牌與詞曲創作工作室。工作室發跡於紐約，如今作品跨越國界。</p>
+    <p class="zh detail" hidden>我們提供從首次錄音到最終母帶的完整錄音室製作，並結合原創詞曲與歌詞創作，為國際串流、廣播與影視市場量身打造。團隊承襲 The New School 與 NYU 的爵士、作曲與音樂科技訓練，作品游走於商業金曲與前衛、定義藝人風格的創作之間，並持續拓展至遊戲互動配樂領域。</p>
   </div>
 </section>
 
@@ -465,37 +477,31 @@
     <p class="section-label"><span class="en">Services</span><span class="zh" hidden>服務項目</span></p>
     <div class="services-grid">
       <div class="svc">
-        <span class="svc-mark" aria-hidden="true"></span>
         <h3><span class="en">Songwriting &amp; Composition</span><span class="zh" hidden>詞曲與作曲</span></h3>
         <p class="en">Original songwriting and versatile composition engineered across a fluid, modern genre spectrum.</p>
         <p class="zh" hidden>跨流行、電子、與另類曲風的歌曲創作。</p>
       </div>
       <div class="svc">
-        <span class="svc-mark" aria-hidden="true"></span>
         <h3><span class="en">Lyric Writing</span><span class="zh" hidden>歌詞創作</span></h3>
         <p class="en">Bilingual lyric composition (English/Chinese) optimized for global streaming and radio rotation.</p>
         <p class="zh" hidden>中文與英文母語歌詞，專為國際串流與廣播標準量身製造。</p>
       </div>
       <div class="svc">
-        <span class="svc-mark" aria-hidden="true"></span>
         <h3><span class="en">Production &amp; Engineering</span><span class="zh" hidden>製作與工程</span></h3>
         <p class="en">Full-suite record production and technical engineering, seamlessly translating rough demos into polished assets.</p>
         <p class="zh" hidden>從Demo到最終母帶的全程把控。</p>
       </div>
       <div class="svc">
-        <span class="svc-mark" aria-hidden="true"></span>
         <h3><span class="en">Vocal Production</span><span class="zh" hidden>人聲製作</span></h3>
         <p class="en">Precision vocal arrangement, multi-take comping, and tuning to sculpt the definitive performance.</p>
         <p class="zh" hidden>人聲與和聲編排、剪輯與修音，雕琢每一句呼吸與細節。</p>
       </div>
       <div class="svc">
-        <span class="svc-mark" aria-hidden="true"></span>
         <h3><span class="en">Mixing &amp; Mastering</span><span class="zh" hidden>混音與母帶</span></h3>
         <p class="en">Release-ready mixes and masters for streaming and sync.</p>
         <p class="zh" hidden>工業標準對口串流平台與授權成品的混音與母帶。</p>
       </div>
       <div class="svc">
-        <span class="svc-mark" aria-hidden="true"></span>
         <h3><span class="en">Scoring</span><span class="zh" hidden>配樂</span></h3>
         <p class="en">Narrative, cinematic, and immersive interactive scoring for screen, games, and modern media.</p>
         <p class="zh" hidden>電影、沉浸式聲學、敘述配樂與遊戲音樂製作。</p>
