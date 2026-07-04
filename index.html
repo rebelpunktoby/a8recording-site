@@ -188,13 +188,29 @@
   .work-empty{display:none;color:var(--muted);font-size:14px;font-style:italic;padding:8px 0 4px;}
 
   /* ---------- credits / sessions ---------- */
-  .session{padding:30px 0;border-top:1px solid var(--panel-line);}
-  .session:first-of-type{border-top:none;padding-top:6px;}
+  .session{border-top:1px solid var(--panel-line);}
+  .session:first-of-type{border-top:none;}
+  .session-toggle{
+    all:unset;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    width:100%;box-sizing:border-box;cursor:pointer;
+    padding:22px 4px;
+  }
+  .session-toggle:hover .artist-name{color:var(--accent);}
+  .session-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:4px;}
+  .session-chevron{
+    font-family:var(--mono);font-size:20px;line-height:1;color:var(--muted-dim);
+    flex-shrink:0;width:22px;text-align:center;
+    transition:transform .25s ease,color .2s ease;
+  }
+  .session-toggle[aria-expanded="true"] .session-chevron{transform:rotate(45deg);color:var(--accent);}
+  .session-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .32s ease;}
+  .session-toggle[aria-expanded="true"] + .session-body{grid-template-rows:1fr;}
+  .session-body-inner{overflow:hidden;padding:0 4px 26px;}
   .session-head{
     display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;
-    margin-bottom:10px;
   }
-  .artist-name{font-size:21px;}
+  .artist-name{font-size:21px;transition:color .2s ease;}
   .artist-name .cjk-alt{font-size:15px;color:var(--muted);font-family:var(--body);font-weight:500;margin-left:6px;letter-spacing:.02em;}
   .genre-tag{
     font-family:var(--mono);font-size:12px;color:var(--muted);
@@ -202,7 +218,7 @@
   }
   .standout{
     color:var(--muted);font-size:14.5px;line-height:1.6;
-    max-width:62ch;margin-bottom:18px;font-style:italic;
+    max-width:62ch;margin:6px 0 18px;font-style:italic;
   }
   
   /* ---------- ALBUm ROW MOTION EFFECT ---------- */
@@ -504,12 +520,16 @@
     </div>
 
     <article class="session" data-cat="poprnb electronic">
-      <div class="session-head">
-        <h3 class="artist-name">Zekiizo</h3>
-        <p class="genre-tag en">Alternative Pop · Electro-Pop · Dark Synth-Pop</p>
-        <p class="genre-tag zh" hidden>另類流行 / 電子流行 / 暗黑合成器流行</p>
-      </div>
-      <p class="standout en">Refining her dark, synth-driven alt-pop into sharper, dancefloor-ready hooks without losing the experimental edge.</p>
+      <button class="session-toggle" type="button" aria-expanded="false">
+        <div class="session-head">
+          <h3 class="artist-name">Zekiizo</h3>
+          <p class="genre-tag en">Alternative Pop · Electro-Pop · Dark Synth-Pop</p>
+          <p class="genre-tag zh" hidden>另類流行 / 電子流行 / 暗黑合成器流行</p>
+        </div>
+        <span class="session-chevron" aria-hidden="true">+</span>
+      </button>
+      <div class="session-body"><div class="session-body-inner">
+      <p class="standout en">Refining a dark, synth-driven alt-pop into sharper, dancefloor-ready hooks without losing the experimental edge.</p>
       <p class="standout zh" hidden>突出暗黑氣質的另類流行，打磨出鮮明、與舞池的律動，同時保留一貫的實驗性。</p>
 
       <a class="album-row" href="https://youtube.com/playlist?list=PLFmiDbU5b0L8OmX_6ke0Z8dZPgiact3n3" target="_blank" rel="noopener">
@@ -539,15 +559,20 @@
           <span class="t-genre en">Alt-Rock / Emo Rock</span><span class="t-genre zh" hidden>另類搖滾 / Emo Rock</span><span class="play">▸ Listen</span>
         </a></li>
       </ol>
+      </div></div>
     </article>
 
     <article class="session" data-cat="poprnb">
-      <div class="session-head">
+      <button class="session-toggle" type="button" aria-expanded="false">
+        <div class="session-head">
         <h3 class="artist-name">Eric Leo</h3>
         <p class="genre-tag en">R&amp;B · Neo-Soul · Afrobeat · Hiphop</p>
         <p class="genre-tag zh" hidden>R&amp;B / Neo-Soul / Afrobeat / 嘻哈</p>
       </div>
-      <p class="standout en">Cross-genre R&amp;B spanning Neo-Soul, Afrobeat, and Hiphop, anchored by a direct, melodic voice. “Rain” samples Wong Kar-wai’s In the Mood for Love.</p>
+        <span class="session-chevron" aria-hidden="true">+</span>
+      </button>
+      <div class="session-body"><div class="session-body-inner">
+<p class="standout en">Cross-genre R&amp;B spanning Neo-Soul, Afrobeat, and Hiphop, anchored by a direct, melodic voice. “Rain” samples Wong Kar-wai’s In the Mood for Love.</p>
       <p class="standout zh" hidden>跨曲風 R&amp;B 創作，涵蓋 Neo-Soul、Afrobeat 與嘻哈，抓耳的旋律且豐富的情感。</p>
 
       <a class="album-row" href="https://on.soundcloud.com/xTGjSKMl7R88owU4l7" target="_blank" rel="noopener">
@@ -572,15 +597,20 @@
           <span class="t-genre en">Contemporary Hiphop / R&amp;B</span><span class="t-genre zh" hidden>當代嘻哈 / R&amp;B</span><span class="play">▸ Listen</span>
         </a></li>
       </ol>
+      </div></div>
     </article>
 
     <article class="session" data-cat="electronic">
-      <div class="session-head">
+      <button class="session-toggle" type="button" aria-expanded="false">
+        <div class="session-head">
         <h3 class="artist-name">Wing</h3>
         <p class="genre-tag en">Dubstep · EDM · Pop  ·  Producer</p>
         <p class="genre-tag zh" hidden>Dubstep · EDM · 流行  ·  製作人</p>
       </div>
-      <p class="standout en">Bass-driven dubstep and EDM productions with a pop core — big drops, hook-forward writing.</p>
+        <span class="session-chevron" aria-hidden="true">+</span>
+      </button>
+      <div class="session-body"><div class="session-body-inner">
+<p class="standout en">Bass-driven dubstep and EDM productions with a pop core — big drops, hook-forward writing.</p>
       <p class="standout zh" hidden>以重低音 Dubstep 與 EDM 為骨幹、流行為核心的製作 — 強烈的 drop 與抓耳的旋律。</p>
 
       <span class="singles-label"><span class="en">Tracks</span><span class="zh" hidden>單曲</span></span>
@@ -598,15 +628,20 @@
           <span class="t-genre en">Melodic EDM / Cinematic Pop</span><span class="t-genre zh" hidden>Melodic EDM / Cinematic Pop</span><span class="play">▸ Listen</span>
         </a></li>
       </ol>
+      </div></div>
     </article>
 
     <article class="session" data-cat="rock">
-      <div class="session-head">
+      <button class="session-toggle" type="button" aria-expanded="false">
+        <div class="session-head">
         <h3 class="artist-name">Chantal Camus</h3>
         <p class="genre-tag en">Alternative Rock · Indie Rock</p>
         <p class="genre-tag zh" hidden>另類搖滾 / 獨立搖滾</p>
       </div>
-      <p class="standout en">Riff-driven alt-rock built on her vocalist–bassist identity; lead singles in official rotation on Texas radio.</p>
+        <span class="session-chevron" aria-hidden="true">+</span>
+      </button>
+      <div class="session-body"><div class="session-body-inner">
+<p class="standout en">Riff-driven alt-rock built on her vocalist–bassist identity; lead singles in official rotation on Texas radio.</p>
       <p class="standout zh" hidden>以「主唱兼貝斯手」為核心的 riff 驅動另類搖滾；主打單曲獲德州主流電台歌單輪播。</p>
 
       <span class="singles-label"><span class="en">Singles</span><span class="zh" hidden>單曲</span></span>
@@ -620,15 +655,20 @@
           <span class="t-genre">Emo Rock / Grunge</span><span class="play">▸ Listen</span>
         </a></li>
       </ol>
+      </div></div>
     </article>
 
     <article class="session film" data-cat="film">
-      <div class="session-head">
+      <button class="session-toggle" type="button" aria-expanded="false">
+        <div class="session-head">
         <h3 class="artist-name">Echos of Ash Valley</h3>
         <p class="genre-tag en">Cinematic Scoring · Venice Immersive 2024</p>
         <p class="genre-tag zh" hidden>電影配樂 / 沉浸式科幻 · 2024 威尼斯沉浸式單元</p>
       </div>
-      <p class="standout en">Lyric and vocal writing for the score of this immersive sci-fi film (dir. Shu Zhu) — official selection, Venice Immersive, La Biennale di Venezia (81st Venice International Film Festival).</p>
+        <span class="session-chevron" aria-hidden="true">+</span>
+      </button>
+      <div class="session-body"><div class="session-body-inner">
+<p class="standout en">Lyric and vocal writing for the score of this immersive sci-fi film (dir. Shu Zhu) — official selection, Venice Immersive, La Biennale di Venezia (81st Venice International Film Festival).</p>
       <p class="standout zh" hidden>為此沉浸式科幻 VR 電影（導演 Shu Zhu）之配樂創作歌詞與人聲；入選 2024 威尼斯影展沉浸式單元（第 81 屆威尼斯國際影展）。</p>
       
       <ol class="reel-list">
@@ -649,15 +689,20 @@
           <span class="play">▸ Listen</span>
         </a></li>
       </ol>
+      </div></div>
     </article>
 
     <article class="session" data-cat="games">
-      <div class="session-head">
+      <button class="session-toggle" type="button" aria-expanded="false">
+        <div class="session-head">
         <h3 class="artist-name">Wuthering Waves <span class="cjk-alt">鳴潮</span></h3>
         <p class="genre-tag en">Trailer &amp; Promotional Scoring · Kuro Games</p>
         <p class="genre-tag zh" hidden>宣傳／預告配樂 · 庫洛遊戲</p>
       </div>
-      <p class="standout en">Music for version and campaign trailers for Kuro Games' award-winning open-world action RPG.</p>
+        <span class="session-chevron" aria-hidden="true">+</span>
+      </button>
+      <div class="session-body"><div class="session-body-inner">
+<p class="standout en">Music for version and campaign trailers for Kuro Games' award-winning open-world action RPG.</p>
       <p class="standout zh" hidden>為庫洛遊戲旗下獲獎開放世界動作 RPG 製作版本與宣傳預告配樂。</p>
 
       <ol class="reel-list">
@@ -723,15 +768,20 @@
         </a></li>
 
       </ol>
+      </div></div>
     </article>
 
     <article class="session" data-cat="games">
-      <div class="session-head">
+      <button class="session-toggle" type="button" aria-expanded="false">
+        <div class="session-head">
         <h3 class="artist-name">Idle Huntress: Girl's Land — 9周年記念PV「異変」 <span class="cjk-alt">ドラゴンとガールズ交響曲</span></h3>
         <p class="genre-tag en">Game PV Scoring · Electronic · Cyberpunk</p>
         <p class="genre-tag zh" hidden>遊戲 PV 配樂 · 電子 · 賽博龐克</p>
       </div>
-      <p class="standout en">Electronic-style music for the idle JRPG's promotional video.</p>
+        <span class="session-chevron" aria-hidden="true">+</span>
+      </button>
+      <div class="session-body"><div class="session-body-inner">
+<p class="standout en">Electronic-style music for the idle JRPG's promotional video.</p>
       <p class="standout zh" hidden>為此放置類 JRPG 之宣傳影片製作電子風格配樂。</p>
       
       <ol class="reel-list">
@@ -744,6 +794,7 @@
           <span class="play">▸ <span class="en">Watch</span><span class="zh" hidden>觀看</span></span>
         </a></li>
       </ol>
+      </div></div>
     </article>
 
     <p class="work-empty" id="workEmpty"><span class="en">No work in this category yet.</span><span class="zh" hidden>此分類暫無作品。</span></p>
@@ -820,6 +871,14 @@
         if (emptyMsg) emptyMsg.style.display = visible === 0 ? 'block' : 'none';
       });
     }
+
+    // ACCORDION SESSION TOGGLE
+    document.querySelectorAll('.session-toggle').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var isOpen = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!isOpen));
+      });
+    });
 
     // MODAL WINDOW SCRIPT LOGIC
     var modal = document.getElementById('contactModal');
