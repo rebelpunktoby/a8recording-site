@@ -204,12 +204,20 @@
     color:var(--muted);font-size:14.5px;line-height:1.6;
     max-width:62ch;margin-bottom:18px;font-style:italic;
   }
+  
+  /* ---------- ALBUm ROW MOTION EFFECT ---------- */
   .album-row{
-    display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;
-    padding:12px 16px;background:var(--panel);
+    display:flex;flex-wrap:wrap;align-items:center;gap:10px;
+    padding:12px 14px;background:var(--panel);
     border:1px solid var(--panel-line);border-radius:8px;
     margin-bottom:16px;
+    border-left:2px solid transparent;
+    transition:background .18s,border-color .18s,padding-left .18s;
   }
+  .album-row:hover{
+    border-left-color:var(--accent);padding-left:18px;
+  }
+
   .tag-label{
     font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;
     color:var(--accent);font-weight:700;
@@ -431,7 +439,7 @@
   <div class="wrap">
     <p class="section-label"><span class="en">About</span><span class="zh" hidden>關於 A8</span></p>
     <p class="en">A full production house and songwriting label, A8 Recording bridges commercial mainstream appeal with experimental sound. We deliver full-suite studio production—from initial tracking to final master—alongside original songwriting and lyric architecture optimized for international release, broadcast, and screen. Backed by backgrounds in jazz, composition, and music technology from The New School and NYU, A8 balances chart-ready hooks with avant-garde, artist-defining records, alongside interactive scoring for modern games.</p>
-    <p class="zh" hidden>A8 Recording 始於紐約的音樂製作廠牌與詞曲創作工作室，作品橫跨流行、R&amp;B 與另類音樂。我們將完整的錄音室製作 — 工程、人聲製作、混音與母帶 — 結合原創詞曲與歌詞創作，專為國際串流、廣播與影視市場打造。團隊根植於 The New School 與 NYU 的古典作曲、爵士與音樂科技訓練，作品在商業旋律與實驗性、定義藝人風格的創作之間自由游走，並持續拓展至遊戲互動與敘事配樂領域。</p>
+    <p class="zh" hidden>A8 Recording 始於紐約的音樂製作廠牌與詞曲創作工作室，作品橫跨流行、電子與實驗音樂。我們將完整的錄音製作 — 工程、混音與母帶 — 結合原創詞曲創作，專為國際標準串流、廣播與影視市場打造。團隊根植於 The New School 與 NYU 的作曲、爵士與音樂科技訓練，作品在商業與實驗性、定義藝人風格的創作之間自由游走，並持續拓展至遊戲互動與銀幕敘事配樂領域。</p>
   </div>
 </section>
 
@@ -443,37 +451,37 @@
         <span class="svc-mark" aria-hidden="true"></span>
         <h3><span class="en">Songwriting &amp; Composition</span><span class="zh" hidden>詞曲與作曲</span></h3>
         <p class="en">Original songwriting and versatile composition engineered across a fluid, modern genre spectrum.</p>
-        <p class="zh" hidden>跨流行、R&amp;B、Afrobeat 與另類曲風的原創歌曲與作曲。</p>
+        <p class="zh" hidden>跨流行、電子、與另類曲風的歌曲創作。</p>
       </div>
       <div class="svc">
         <span class="svc-mark" aria-hidden="true"></span>
         <h3><span class="en">Lyric Writing</span><span class="zh" hidden>歌詞創作</span></h3>
         <p class="en">Bilingual lyric composition (English/Chinese) optimized for global streaming and radio rotation.</p>
-        <p class="zh" hidden>英文母語歌詞，專為國際串流與廣播打造。</p>
+        <p class="zh" hidden>中文與英文母語歌詞，專為國際串流與廣播標準量身製造。</p>
       </div>
       <div class="svc">
         <span class="svc-mark" aria-hidden="true"></span>
         <h3><span class="en">Production &amp; Engineering</span><span class="zh" hidden>製作與工程</span></h3>
         <p class="en">Full-suite record production and technical engineering, seamlessly translating rough demos into polished assets.</p>
-        <p class="zh" hidden>從首次錄音到最終母帶的完整唱片製作與工程。</p>
+        <p class="zh" hidden>從Demo到最終母帶的全程把控。</p>
       </div>
       <div class="svc">
         <span class="svc-mark" aria-hidden="true"></span>
         <h3><span class="en">Vocal Production</span><span class="zh" hidden>人聲製作</span></h3>
         <p class="en">Precision vocal arrangement, multi-take comping, and tuning to sculpt the definitive performance.</p>
-        <p class="zh" hidden>人聲編排、剪輯與修音，雕琢每一段演出。</p>
+        <p class="zh" hidden>人聲與和聲編排、剪輯與修音，雕琢每一句呼吸與細節。</p>
       </div>
       <div class="svc">
         <span class="svc-mark" aria-hidden="true"></span>
         <h3><span class="en">Mixing &amp; Mastering</span><span class="zh" hidden>混音與母帶</span></h3>
         <p class="en">Release-ready mixes and masters for streaming and sync.</p>
-        <p class="zh" hidden>適用於串流與 Sync 授權的成品混音與母帶。</p>
+        <p class="zh" hidden>工業標準對口串流平台與授權成品的混音與母帶。</p>
       </div>
       <div class="svc">
         <span class="svc-mark" aria-hidden="true"></span>
         <h3><span class="en">Scoring</span><span class="zh" hidden>配樂</span></h3>
         <p class="en">Narrative, cinematic, and immersive interactive scoring for screen, games, and modern media.</p>
-        <p class="zh" hidden>電影、沉浸式與遊戲配樂，包含入選威尼斯影展之作品。</p>
+        <p class="zh" hidden>電影、沉浸式聲學、敘述配樂與遊戲音樂製作。</p>
       </div>
     </div>
   </div>
@@ -481,7 +489,7 @@
 
 <section class="credits work-section">
   <div class="wrap">
-    <p class="section-label"><span class="en">Selected Work</span><span class="zh" hidden>精選作品</span></p>
+    <p class="section-label"><span class="en">Selected Projects</span><span class="zh" hidden>精選作品</span></p>
     <p class="collab-note en">A selection of the artists, records, and scores A8 has worked on and contributed to.</p>
     <p class="collab-note zh" hidden>A8 曾參與創作與製作的藝人、作品與配樂精選。</p>
 
@@ -502,13 +510,13 @@
       <p class="standout en">Refining her dark, synth-driven alt-pop into sharper, dancefloor-ready hooks without losing the experimental edge.</p>
       <p class="standout zh" hidden>突出暗黑氣質的另類流行，打磨出鮮明、與舞池的律動，同時保留一貫的實驗性。</p>
 
-      <div class="album-row">
+      <a class="album-row" href="https://youtube.com/playlist?list=PLFmiDbU5b0L8OmX_6ke0Z8dZPgiact3n3" target="_blank" rel="noopener">
         <span class="tag-label">ALBUM</span>
         <span class="title">“Final Fantasy”</span>
         <span class="meta en">(13-track Alternative / Electronic)</span>
         <span class="meta zh" hidden>（13 首曲 · 另類流行 / 電子專輯）</span>
-        <a class="play" href="https://youtube.com/playlist?list=PLFmiDbU5b0L8OmX_6ke0Z8dZPgiact3n3" target="_blank" rel="noopener" style="margin-left:auto;">▸ Listen</a>
-      </div>
+        <span class="play" style="margin-left:auto;">▸ Listen</span>
+      </a>
 
       <span class="singles-label"><span class="en">Singles</span><span class="zh" hidden>單曲</span></span>
       <ol class="track-list">
@@ -540,12 +548,12 @@
       <p class="standout en">Cross-genre R&amp;B spanning Neo-Soul, Afrobeat, and Hiphop, anchored by a direct, melodic voice. “Rain” samples Wong Kar-wai’s In the Mood for Love.</p>
       <p class="standout zh" hidden>跨曲風 R&amp;B 創作，涵蓋 Neo-Soul、Afrobeat 與嘻哈，抓耳的旋律且豐富的情感。</p>
 
-      <div class="album-row">
+      <a class="album-row" href="https://on.soundcloud.com/xTGjSKMl7R88owU4l7" target="_blank" rel="noopener">
         <span class="tag-label">ALBUM</span>
         <span class="title">“24 O’Clock”</span>
         <span class="meta">(R&amp;B / Neo-Soul)</span>
-        <a class="play" href="https://on.soundcloud.com/xTGjSKMl7R88owU4l7" target="_blank" rel="noopener" style="margin-left:auto;">▸ Listen</a>
-      </div>
+        <span class="play" style="margin-left:auto;">▸ Listen</span>
+      </a>
 
       <span class="singles-label"><span class="en">Singles</span><span class="zh" hidden>單曲</span></span>
       <ol class="track-list">
@@ -555,7 +563,7 @@
         </a></li>
         <li><a href="https://youtu.be/Nkgu44pjRZI" target="_blank" rel="noopener">
           <span class="idx"></span><span class="t-title">Angel Dust</span>
-          <span class="t-genre en">Trap / Psychedelic Pop</span><span class="t-genre zh" hidden>Trap / 迷幻流行</span><span class="play">▸ Listen</span>
+          <span class="t-genre en">Melodic Trap / Psychedelic Hiphop</span><span class="t-genre zh" hidden>Melodic Trap / 迷幻嘻哈</span><span class="play">▸ Listen</span>
         </a></li>
         <li><a href="https://untitled.stream/library/track/X1j9gSyvFvgaNFcsLyDgC" target="_blank" rel="noopener">
           <span class="idx"></span><span class="t-title">GONE MiSSiNG</span>
@@ -612,7 +620,7 @@
       </ol>
     </article>
 
-    <article class="session" data-cat="filmgames">
+    <article class="session film" data-cat="filmgames">
       <div class="session-head">
         <h3 class="artist-name">Echos of Ash Valley</h3>
         <p class="genre-tag en">Cinematic Scoring · Venice Immersive 2024</p>
