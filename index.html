@@ -8,6 +8,8 @@
 <meta property="og:title" content="A8 Recording NYC — Production &amp; Songwriting Studio">
 <meta property="og:description" content="A New York production and songwriting house — pop, R&amp;B, alternative, and cinematic work for international release.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://a8recordingnyc.studio/">
+<link rel="canonical" href="https://a8recordingnyc.studio/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Manrope:wght@400;500;700;800&family=Space+Mono:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -371,14 +373,155 @@
     cursor: pointer; border-radius: 999px; transition: opacity .2s;
   }
   .modal-submit:hover { opacity: 0.85; }
+
+  /* Light revision: retain A8's palette, typography, and existing content. */
+  html{scroll-padding-top:110px;scrollbar-gutter:stable;}
+  .skip-link{position:fixed;top:8px;left:8px;z-index:1100;padding:10px 16px;background:var(--accent);color:#150C10;transform:translateY(-160%);}
+  .skip-link:focus{transform:none;}
+  .nav-link{font-family:var(--mono);font-size:12px;color:var(--muted);padding:8px 0;}
+  .nav-link:hover{color:var(--text);}
+  .topbar nav{flex-wrap:wrap;}
+  .section-label{font-family:var(--mono);font-weight:400;}
+  h1.name{line-height:1.16;}
+  .role{max-width:42ch;line-height:1.65;}
+  .tags{line-height:1.85;}
+  .profile .detail{font-size:16px;line-height:1.75;}
+  .contact-pill.primary-contact{background:var(--accent);border-color:var(--accent);color:#150C10;font-weight:700;}
+  .contact-pill.primary-contact:hover{opacity:.85;}
+  .track-list .t-title{flex-shrink:1;min-width:0;overflow-wrap:anywhere;}
+  .contact-hint{font-size:14px;color:var(--muted);margin:12px 0 18px;max-width:35ch;}
+  .modal-window{max-height:calc(100dvh - 40px);overflow-y:auto;}
+  .modal-form{gap:8px;}
+  .modal-form label{font-size:13px;font-weight:700;margin-top:8px;}
+  .modal-form textarea{resize:vertical;min-height:100px;}
+  .modal-submit{margin-top:10px;}
+  .direct-email{display:inline-block;font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:20px;overflow-wrap:anywhere;}
+  .direct-email:hover{color:var(--accent);}
+  @media(max-width:640px){
+    .topbar .wrap{flex-wrap:wrap;gap:10px;padding-top:12px;padding-bottom:12px;}
+    .topbar nav{gap:10px;margin-left:auto;}
+    .lang-toggle,.cta-mini,.chip{min-height:44px;display:inline-flex;align-items:center;justify-content:center;}
+    .contact-pill{min-height:44px;display:inline-flex;align-items:center;}
+    .track-list .t-title{flex:1;}
+    .track-list .t-extra{flex-basis:100%;order:4;}
+    .track-list .t-genre{min-width:0;}
+    .modal-window{padding:32px 22px 24px;}
+    .modal-close{min-height:44px;top:2px;right:14px;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *,*::before,*::after{transition:none!important;}
+  }
+
+  html{scroll-padding-top:110px;}
+  .wrap{max-width:var(--maxw);padding-left:40px;padding-right:40px;}
+  .topbar .wrap{padding-top:20px;padding-bottom:20px;}
+  .topbar nav{gap:22px;}
+  .nav-link{font-size:12px;color:var(--text);}
+  .lang-toggle,.cta-mini,.chip{min-height:44px;display:inline-flex;align-items:center;justify-content:center;}
+  .contact-pill{overflow-wrap:anywhere;}
+  .section-label{font-size:11px;letter-spacing:.18em;}
+  .track-list a,.reel-list a{min-width:0;}
+  .track-list .t-title{font-size:14px;flex-shrink:1;min-width:0;overflow-wrap:anywhere;}
+  .track-list .t-genre{min-width:0;}
+  .track-list .t-extra{overflow-wrap:anywhere;}
+  .reel-title,.reel-meta{overflow-wrap:anywhere;}
+  .reel-title .r-cn,.reel-title .r-en{display:inline;}
+  .word{white-space:nowrap;}
+  .modal-window{color:var(--text);}
+  @media(max-width:700px){
+    .wrap{padding-left:20px;padding-right:20px;}
+    .topbar .wrap{padding-top:12px;padding-bottom:12px;gap:10px;}
+    .topbar nav{gap:12px;flex-wrap:wrap;margin-left:0;width:100%;}
+    .topbar .lang-toggle{margin-left:auto;}
+    .track-list .t-genre{flex-basis:100%;}
+    .track-list .t-extra{flex-basis:100%;order:4;}
+  }
+
+  :root{--bg:#0C0E0D;--bg-soft:#121613;--panel:#151A16;--panel-line:#30382F;--text:#F1F5E9;--muted:#ADB9A5;--muted-dim:#98A58F;--accent:#C8F568;--accent-soft:rgba(200,245,104,.1);--accent-line:rgba(200,245,104,.4);--maxw:1280px;--display:'Arial Black','Manrope',sans-serif;}
+  .topbar{background:rgba(12,14,13,.95);backdrop-filter:blur(14px);}
+  .word{font-size:13px;letter-spacing:.09em;}
+  .cta-mini,.contact-pill.primary-contact,.chip.active,.modal-submit{color:#0C0E0D;}
+  .hero{padding:86px 0 82px;}
+  .hero .eq{display:none;}
+  .hero-inner{display:grid;grid-template-columns:1.2fr 1fr;align-items:center;gap:64px;}
+  .hero-copy{min-width:0;}
+  .eyebrow{font-size:11px;letter-spacing:.16em;margin-bottom:28px;}
+  h1.name{font-size:clamp(48px,6vw,86px);line-height:1.01;letter-spacing:-.065em;max-width:11ch;margin-bottom:28px;}
+  h1.name .zh{font-size:.78em;letter-spacing:-.025em;}
+  .role{font-size:17px;line-height:1.65;max-width:38ch;font-weight:500;}
+  .tags{font-size:11px;line-height:1.9;max-width:46ch;margin:20px 0 24px;}
+  .contact-pill{border-radius:4px;font-size:11px;padding:12px 14px;}
+  .hero-listen{display:inline-flex;gap:28px;align-items:center;color:var(--accent);font-size:15px;font-weight:700;margin-top:22px;}
+  .hero-listen span[aria-hidden]{font-size:24px;}
+  .signal-art{position:relative;aspect-ratio:1/1.08;display:flex;align-items:center;justify-content:center;border:1px solid var(--panel-line);background:radial-gradient(ellipse at 50% 35%,#24301c,#111610 70%);overflow:hidden;}
+  .record{position:relative;width:82%;aspect-ratio:1;border-radius:50%;background:repeating-radial-gradient(circle,#080a08 0px,#080a08 3px,#252b22 4px,#080a08 5px);box-shadow:0 0 0 1px #515b42,0 25px 70px #0008;transform:rotate(-15deg);display:grid;place-items:center;}
+  .record-label{width:36%;aspect-ratio:1;border-radius:50%;background:var(--accent);color:#10160b;display:flex;align-items:center;justify-content:center;flex-direction:column;font-size:clamp(32px,5vw,66px);font-weight:900;letter-spacing:-.06em;}
+  .record-label:after{content:'';width:8px;height:8px;background:var(--bg);border-radius:50%;margin-top:8px;}
+  .record-label span{font-family:var(--mono);font-size:7px;letter-spacing:.06em;}
+  .signal-bars{position:absolute;bottom:48px;left:22px;right:22px;height:84px;display:flex;gap:7px;align-items:flex-end;mix-blend-mode:screen;}
+  .signal-bars i{height:var(--level);flex:1;background:var(--accent);opacity:.65;}
+  .art-caption{position:absolute;bottom:16px;left:22px;font-family:var(--mono);font-size:8px;letter-spacing:.14em;color:var(--muted);}
+  section{padding:64px 0;}
+  #work .section-label{font-size:12px;margin-bottom:14px;}
+  .collab-note{font-style:normal;font-size:15px;margin:0 0 24px;max-width:68ch;}
+  .work-filters{margin-bottom:32px;gap:8px;}
+  .chip{border-radius:4px;font-size:11px;padding:9px 16px;}
+  .project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:start;}
+  .project-grid .session{min-width:0;padding:28px 24px;background:var(--panel);border:1px solid var(--panel-line);border-radius:2px;}
+  .project-grid .session:first-of-type{padding-top:28px;border-top:1px solid var(--panel-line);}
+  .session-head{display:block;margin-bottom:18px;}
+  .artist-name{font-size:25px;letter-spacing:-.04em;line-height:1.15;margin-bottom:10px;}
+  .genre-tag{font-size:10px;line-height:1.7;}
+  .standout,.session.film .standout{font-size:13px;font-style:normal;line-height:1.8;color:var(--muted);margin-bottom:22px;}
+  .album-row{background:var(--bg);border-radius:2px;padding:14px 12px;gap:6px;}
+  .album-row .title{font-size:14px;}
+  .album-row .meta{font-size:11px;}
+  .album-row .tag-label{flex-basis:100%;}
+  .track-list a,.reel-list a{padding:12px 0;gap:8px;flex-wrap:wrap;border-radius:0;border-bottom:1px solid var(--panel-line);}
+  .track-list a:hover,.reel-list a:hover{padding-left:8px;}
+  .track-list .t-title{flex:1;}
+  .track-list .t-genre{flex-basis:100%;order:3;font-size:10px;padding-left:30px;}
+  .track-list .t-extra{flex-basis:100%;order:4;padding-left:30px;font-size:10px;}
+  .track-list .idx,.reel-list .r-idx{width:18px;font-size:10px;}
+  .play{font-size:10px;}
+  .reel-list .play{margin-left:26px;}
+  .reel-title{font-size:13px;line-height:1.5;}
+  .reel-meta{font-size:10px;}
+  #project-wuthering-waves{grid-column:span 2;}
+  #project-wuthering-waves .reel-list{display:grid;grid-template-columns:1fr 1fr;gap:0 24px;}
+  .services-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--panel-line);border-left:1px solid var(--panel-line);}
+  .svc{border-radius:0;border-top:0;border-left:0;background:transparent;padding:28px;}
+  .svc::before{width:24px;height:2px;border-radius:0;margin-bottom:22px;}
+  .svc h3{font-size:15px;}
+  .profile .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:12px 70px;}
+  .profile .section-label{grid-column:1/-1;}
+  .profile .lede{font-size:23px;line-height:1.5;}
+  .profile .detail{margin-top:0;font-size:15px;color:var(--muted);}
+  footer{padding:70px 0;background:var(--panel);}
+  .available{font-size:22px;line-height:1.6;}
+  .modal-window{background:#151A16;}
+  @media(max-width:1050px){.hero-inner{gap:32px;}.project-grid{grid-template-columns:repeat(2,minmax(0,1fr));}#project-wuthering-waves{grid-column:span 2;}}
+  @media(max-width:700px){
+    .hero{padding:48px 0;}.hero-inner{grid-template-columns:1fr;gap:36px;}
+    h1.name{font-size:clamp(46px,12vw,68px);letter-spacing:-.055em;}
+    .signal-art{max-width:440px;aspect-ratio:1.3;width:100%;}.record{width:62%;}.record-label{font-size:40px;}.signal-bars{height:48px;}
+    section{padding:44px 0;}.project-grid{grid-template-columns:1fr;}#project-wuthering-waves{grid-column:auto;}
+    #project-wuthering-waves .reel-list{grid-template-columns:1fr;}.project-grid .session{padding:24px 20px;}
+    .services-grid{grid-template-columns:1fr;}.svc{padding:24px;}.profile .wrap{display:block;}.profile .detail{margin-top:20px;}
+    .available{font-size:19px;}.record-label span{font-size:6px;}
+  }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main"><span class="en">Skip to content</span><span class="zh" hidden>跳至主要內容</span></a>
 
 <header class="topbar">
   <div class="wrap">
     <span class="word">A8<span class="dot">●</span>RECORDINGNYC</span>
-    <nav>
+    <nav aria-label="Main navigation">
+      <a class="nav-link" href="#work"><span class="en">Work</span><span class="zh" hidden>作品</span></a>
+      <a class="nav-link" href="#services"><span class="en">Services</span><span class="zh" hidden>服務</span></a>
       <button class="lang-toggle" id="langToggle" type="button" aria-pressed="false">繁中</button>
       <a class="cta-mini" href="mailto:A8RECORDINGNYC@GMAIL.COM">
         <span class="en">Contact</span><span class="zh" hidden>聯繫</span>
@@ -387,6 +530,7 @@
   </div>
 </header>
 
+<main id="main">
 <section class="hero">
   <div class="eq" aria-hidden="true">
     <span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span><span style="--i:3"></span>
@@ -398,7 +542,7 @@
     <span style="--i:24"></span><span style="--i:25"></span><span style="--i:26"></span><span style="--i:27"></span>
     <span style="--i:28"></span><span style="--i:29"></span><span style="--i:30"></span><span style="--i:31"></span>
   </div>
-  <div class="wrap hero-inner">
+  <div class="wrap hero-inner"><div class="hero-copy">
     <p class="eyebrow"><span class="rec-dot" aria-hidden="true"></span>
       <span class="en">A8RecordingNYC</span>
       <span class="zh" hidden>A8RecordingNYC</span>
@@ -418,111 +562,34 @@
     <div class="contact-row">
       <a class="contact-pill" href="mailto:A8RECORDINGNYC@GMAIL.COM">A8RECORDINGNYC@GMAIL.COM</a>
     </div>
+      <a class="hero-listen" href="#work"><span class="en">Explore the records</span><span class="zh" hidden>探索作品</span> <span aria-hidden="true">↘</span></a>
+    </div><div class="signal-art" aria-hidden="true">
+    <div class="record"><div class="record-label">A8<span>RECORDING / NYC</span></div></div>
+    <div class="signal-bars"><i style="--level:22%"></i><i style="--level:48%"></i><i style="--level:76%"></i><i style="--level:32%"></i><i style="--level:62%"></i><i style="--level:92%"></i><i style="--level:54%"></i><i style="--level:36%"></i><i style="--level:72%"></i><i style="--level:100%"></i><i style="--level:64%"></i><i style="--level:28%"></i><i style="--level:58%"></i><i style="--level:86%"></i><i style="--level:44%"></i><i style="--level:20%"></i></div>
+    <span class="art-caption">SONGWRITING / PRODUCTION / SCORING</span>
+  </div>
   </div>
 </section>
 
-<section class="profile">
+<section class="credits work-section" id="work" aria-labelledby="workHeading">
   <div class="wrap">
-    <p class="section-label"><span class="en">About</span><span class="zh" hidden>關於 A8</span></p>
-    <p class="en lede">A8 Recording is a production house and songwriting label built to balance mainstream appeal with experimental sound. Founded in New York, we now write, produce, and score across borders.</p>
-    <p class="en detail">Full studio production — from the first demo to final master — paired with original songwriting and industry-standard engineering for international release, broadcast, and screen. Rooted in jazz, composition, and music technology training from The New School and NYU, A8 fuses chart-ready hooks with avant-garde, artist-defining records, and extends into interactive scoring for modern games.</p>
-    <p class="zh lede" hidden>A8 Recording NYC 致力於在主流吸引力與實驗聲響之間取得平衡的音樂製作廠牌與詞曲創作工作室。發跡於紐約，如今作品跨越國界與領域。</p>
-    <p class="zh detail" hidden>我們提供從Demo錄音到最終母帶工程的完整錄音室製作，結合原創詞曲與創作，為國際串流、廣播與影視市場量身打造。團隊承 The New School 與 NYU 的爵士、作曲與音樂科技專業背景，作品游走於商業金曲與前衛、定義藝人風格與創意之間，並持續拓展至遊戲互動配樂領域。</p>
-  </div>
-</section>
-
-<section class="services">
-  <div class="wrap">
-    <p class="section-label"><span class="en">Services</span><span class="zh" hidden>服務項目</span></p>
-    <div class="services-grid">
-      <div class="svc">
-        <h3><span class="en">Songwriting &amp; Composition</span><span class="zh" hidden>詞曲與作曲</span></h3>
-        <p class="en">Original songwriting and versatile composition engineered across a fluid, modern genre spectrum.</p>
-        <p class="zh" hidden>跨流行、電子、與另類曲風的歌曲創作。</p>
-      </div>
-      <div class="svc">
-        <h3><span class="en">Lyric Writing</span><span class="zh" hidden>歌詞創作</span></h3>
-        <p class="en">Bilingual lyric composition (English/Chinese) optimized for global streaming and radio rotation.</p>
-        <p class="zh" hidden>中文與英文母語歌詞，專為國際串流與廣播標準量身製造。</p>
-      </div>
-      <div class="svc">
-        <h3><span class="en">Production &amp; Engineering</span><span class="zh" hidden>製作與工程</span></h3>
-        <p class="en">Full-suite record production and technical engineering, seamlessly translating rough demos into polished assets.</p>
-        <p class="zh" hidden>從Demo到最終母帶的全程把控。</p>
-      </div>
-      <div class="svc">
-        <h3><span class="en">Vocal Production</span><span class="zh" hidden>人聲製作</span></h3>
-        <p class="en">Precision vocal arrangement, multi-take comping, and tuning to sculpt the definitive performance.</p>
-        <p class="zh" hidden>人聲與和聲編排、剪輯與修音，雕琢每一句呼吸與細節。</p>
-      </div>
-      <div class="svc">
-        <h3><span class="en">Mixing &amp; Mastering</span><span class="zh" hidden>混音與母帶</span></h3>
-        <p class="en">Release-ready mixes and masters for streaming and sync.</p>
-        <p class="zh" hidden>工業標準對口串流平台與授權成品的混音與母帶。</p>
-      </div>
-      <div class="svc">
-        <h3><span class="en">Scoring</span><span class="zh" hidden>配樂</span></h3>
-        <p class="en">Narrative, cinematic, and immersive interactive scoring for screen, games, and modern media.</p>
-        <p class="zh" hidden>電影、沉浸式聲學、敘述配樂與遊戲音樂製作。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="credits work-section">
-  <div class="wrap">
-    <p class="section-label"><span class="en">Selected Projects</span><span class="zh" hidden>精選作品</span></p>
+    <h2 class="section-label" id="workHeading"><span class="en">Selected Projects</span><span class="zh" hidden>精選作品</span></h2>
     <p class="collab-note en">A selection of the artists, records, and scores A8 has worked on and contributed to.</p>
     <p class="collab-note zh" hidden>A8 曾參與創作與製作的藝人、作品與配樂精選。</p>
 
     <div class="work-filters" id="workFilters">
-      <button class="chip active" type="button" data-filter="all"><span class="en">All</span><span class="zh" hidden>全部</span></button>
-      <button class="chip" type="button" data-filter="poprnb"><span class="en">Pop &amp; R&amp;B</span><span class="zh" hidden>流行 &amp; R&amp;B</span></button>
-      <button class="chip" type="button" data-filter="electronic"><span class="en">Electronic</span><span class="zh" hidden>電子</span></button>
-      <button class="chip" type="button" data-filter="rock"><span class="en">Rock</span><span class="zh" hidden>搖滾</span></button>
-      <button class="chip" type="button" data-filter="film"><span class="en">Film</span><span class="zh" hidden>影視</span></button>
-      <button class="chip" type="button" data-filter="games"><span class="en">Games</span><span class="zh" hidden>遊戲</span></button>
+      <button class="chip active" type="button" data-filter="all" aria-pressed="true"><span class="en">All</span><span class="zh" hidden>全部</span></button>
+      <button class="chip" type="button" data-filter="poprnb" aria-pressed="false"><span class="en">Pop &amp; R&amp;B</span><span class="zh" hidden>流行 &amp; R&amp;B</span></button>
+      <button class="chip" type="button" data-filter="electronic" aria-pressed="false"><span class="en">Electronic</span><span class="zh" hidden>電子</span></button>
+      <button class="chip" type="button" data-filter="rock" aria-pressed="false"><span class="en">Rock</span><span class="zh" hidden>搖滾</span></button>
+      <button class="chip" type="button" data-filter="film" aria-pressed="false"><span class="en">Film</span><span class="zh" hidden>影視</span></button>
+      <button class="chip" type="button" data-filter="games" aria-pressed="false"><span class="en">Games</span><span class="zh" hidden>遊戲</span></button>
     </div>
 
-    <article class="session" data-cat="poprnb electronic">
-      <div class="session-head">
-        <h3 class="artist-name">Zekiizo</h3>
-        <p class="genre-tag en">Alternative Pop · Electro-Pop · Dark Synth-Pop</p>
-        <p class="genre-tag zh" hidden>另類流行 / 電子流行 / 暗黑合成器流行</p>
-      </div>
-      <p class="standout en">Refining a dark, synth-driven alt-pop into sharper, dancefloor-ready hooks without losing the experimental edge.</p>
-      <p class="standout zh" hidden>突出暗黑氣質的另類流行，打磨出鮮明、與舞池的律動，同時保留一貫的實驗性。</p>
+    
 
-      <a class="album-row" href="https://youtube.com/playlist?list=PLFmiDbU5b0L8OmX_6ke0Z8dZPgiact3n3" target="_blank" rel="noopener">
-        <span class="tag-label">ALBUM</span>
-        <span class="title">“Final Fantasy”</span>
-        <span class="meta en">(13-track Alternative / Electronic)</span>
-        <span class="meta zh" hidden>（13 首曲 · 另類流行 / 電子專輯）</span>
-        <span class="play" style="margin-left:auto;">▸ Listen</span>
-      </a>
-
-      <span class="singles-label"><span class="en">Singles</span><span class="zh" hidden>單曲</span></span>
-      <ol class="track-list">
-        <li><a href="https://www.youtube.com/watch?v=HheNbxNj5eA" target="_blank" rel="noopener">
-          <span class="idx"></span><span class="t-title">SHOTGUN</span>
-          <span class="t-genre">Hyperpop / Dance Pop</span><span class="play">▸ Listen</span>
-        </a></li>
-        <li><a href="https://www.youtube.com/watch?v=gc5C1OjzzPA" target="_blank" rel="noopener">
-          <span class="idx"></span><span class="t-title">KISS</span>
-          <span class="t-genre en">Electro-Pop / Trance-Pop</span><span class="t-genre zh" hidden>電子流行 / Trance-Pop</span><span class="play">▸ Listen</span>
-        </a></li>
-        <li><a href="https://www.youtube.com/watch?v=B0QkWBW5o1Q" target="_blank" rel="noopener">
-          <span class="idx"></span><span class="t-title">Ricochet</span>
-          <span class="t-genre en">Dark Alt-Pop / Dance Trap</span><span class="t-genre zh" hidden>暗黑流行 / Dance Trap</span><span class="play">▸ Listen</span>
-        </a></li>
-        <li><a href="https://untitled.stream/library/project/8Cf3cV7HNGSS57Z9SdazQ" target="_blank" rel="noopener">
-          <span class="idx"></span><span class="t-title">Unreleased</span>
-          <span class="t-genre en">Alt-Rock / Emo Rock</span><span class="t-genre zh" hidden>另類搖滾 / Emo Rock</span><span class="play">▸ Listen</span>
-        </a></li>
-      </ol>
-    </article>
-
-    <article class="session" data-cat="poprnb">
+    <div class="project-grid">
+<article id="project-eric-leo" class="session" data-cat="poprnb">
       <div class="session-head">
         <h3 class="artist-name">Eric Leo</h3>
         <p class="genre-tag en">R&amp;B · Neo-Soul · Afrobeat · Hiphop</p>
@@ -555,7 +622,7 @@
       </ol>
     </article>
 
-    <article class="session" data-cat="electronic">
+    <article id="project-wing" class="session" data-cat="electronic">
       <div class="session-head">
         <h3 class="artist-name">Wing</h3>
         <p class="genre-tag en">Dubstep · EDM · Pop  ·  Producer</p>
@@ -581,7 +648,7 @@
       </ol>
     </article>
 
-    <article class="session" data-cat="rock">
+    <article id="project-chantal-camus" class="session" data-cat="rock">
       <div class="session-head">
         <h3 class="artist-name">Chantal Camus</h3>
         <p class="genre-tag en">Alternative Rock · Indie Rock</p>
@@ -603,7 +670,7 @@
       </ol>
     </article>
 
-    <article class="session film" data-cat="film">
+    <article id="project-ash-valley" class="session film" data-cat="film">
       <div class="session-head">
         <h3 class="artist-name">Echos of Ash Valley</h3>
         <p class="genre-tag en">Cinematic Scoring · Venice Immersive 2024</p>
@@ -632,7 +699,7 @@
       </ol>
     </article>
 
-    <article class="session" data-cat="games">
+    <article id="project-wuthering-waves" class="session" data-cat="games">
       <div class="session-head">
         <h3 class="artist-name">Wuthering Waves <span class="cjk-alt">鳴潮</span></h3>
         <p class="genre-tag en">Trailer &amp; Promotional Scoring · Kuro Games</p>
@@ -706,7 +773,7 @@
       </ol>
     </article>
 
-    <article class="session" data-cat="games">
+    <article id="project-idle-huntress" class="session" data-cat="games">
       <div class="session-head">
         <h3 class="artist-name">Idle Huntress: Girl's Land — 9周年記念PV「異変」 <span class="cjk-alt">ドラゴンとガールズ交響曲</span></h3>
         <p class="genre-tag en">Game PV Scoring · Electronic · Cyberpunk</p>
@@ -726,11 +793,61 @@
         </a></li>
       </ol>
     </article>
+</div>
 
     <p class="work-empty" id="workEmpty"><span class="en">No work in this category yet.</span><span class="zh" hidden>此分類暫無作品。</span></p>
 
   </div>
 </section>
+
+<section class="services" id="services" aria-labelledby="servicesHeading">
+  <div class="wrap">
+    <h2 class="section-label" id="servicesHeading"><span class="en">Services</span><span class="zh" hidden>服務項目</span></h2>
+    <div class="services-grid">
+      <div class="svc">
+        <h3><span class="en">Songwriting &amp; Composition</span><span class="zh" hidden>詞曲與作曲</span></h3>
+        <p class="en">Original songwriting and versatile composition engineered across a fluid, modern genre spectrum.</p>
+        <p class="zh" hidden>跨流行、電子、與另類曲風的歌曲創作。</p>
+      </div>
+      <div class="svc">
+        <h3><span class="en">Lyric Writing</span><span class="zh" hidden>歌詞創作</span></h3>
+        <p class="en">Bilingual lyric composition (English/Chinese) optimized for global streaming and radio rotation.</p>
+        <p class="zh" hidden>中文與英文母語歌詞，專為國際串流與廣播標準量身製造。</p>
+      </div>
+      <div class="svc">
+        <h3><span class="en">Production &amp; Engineering</span><span class="zh" hidden>製作與工程</span></h3>
+        <p class="en">Full-suite record production and technical engineering, seamlessly translating rough demos into polished assets.</p>
+        <p class="zh" hidden>從Demo到最終母帶的全程把控。</p>
+      </div>
+      <div class="svc">
+        <h3><span class="en">Vocal Production</span><span class="zh" hidden>人聲製作</span></h3>
+        <p class="en">Precision vocal arrangement, multi-take comping, and tuning to sculpt the definitive performance.</p>
+        <p class="zh" hidden>人聲與和聲編排、剪輯與修音，雕琢每一句呼吸與細節。</p>
+      </div>
+      <div class="svc">
+        <h3><span class="en">Mixing &amp; Mastering</span><span class="zh" hidden>混音與母帶</span></h3>
+        <p class="en">Release-ready mixes and masters for streaming and sync.</p>
+        <p class="zh" hidden>工業標準對口串流平台與授權成品的混音與母帶。</p>
+      </div>
+      <div class="svc">
+        <h3><span class="en">Scoring</span><span class="zh" hidden>配樂</span></h3>
+        <p class="en">Narrative, cinematic, and immersive interactive scoring for screen, games, and modern media.</p>
+        <p class="zh" hidden>電影、沉浸式聲學、敘述配樂與遊戲音樂製作。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="profile" id="about" aria-labelledby="aboutHeading">
+  <div class="wrap">
+    <h2 class="section-label" id="aboutHeading"><span class="en">About</span><span class="zh" hidden>關於 A8</span></h2>
+    <p class="en lede">A8 Recording is a production house and songwriting label built to balance mainstream appeal with experimental sound. Founded in New York, we now write, produce, and score across borders.</p>
+    <p class="en detail">Full studio production — from the first demo to final master — paired with original songwriting and industry-standard engineering for international release, broadcast, and screen. Rooted in jazz, composition, and music technology training from The New School and NYU, A8 fuses chart-ready hooks with avant-garde, artist-defining records, and extends into interactive scoring for modern games.</p>
+    <p class="zh lede" hidden>A8 Recording NYC 致力於在主流吸引力與實驗聲響之間取得平衡的音樂製作廠牌與詞曲創作工作室。發跡於紐約，如今作品跨越國界與領域。</p>
+    <p class="zh detail" hidden>我們提供從Demo錄音到最終母帶工程的完整錄音室製作，結合原創詞曲與創作，為國際串流、廣播與影視市場量身打造。團隊承 The New School 與 NYU 的爵士、作曲與音樂科技專業背景，作品游走於商業金曲與前衛、定義藝人風格與創意之間，並持續拓展至遊戲互動配樂領域。</p>
+  </div>
+</section>
+</main>
 
 <footer>
   <div class="wrap">
@@ -743,20 +860,25 @@
   </div>
 </footer>
 
-<div class="modal-overlay" id="contactModal">
-  <div class="modal-window">
+<div class="modal-overlay" id="contactModal" hidden>
+  <div class="modal-window" role="dialog" aria-modal="true" aria-labelledby="contactTitle" aria-describedby="contactHint">
     <button class="modal-close" id="closeModal" aria-label="Close window">close // ✕</button>
-    <p class="section-label" style="margin-bottom: 0;">Reach Out</p>
+    <h2 class="section-label" id="contactTitle" style="margin-bottom: 0;"><span class="en">Reach Out</span><span class="zh" hidden>聯繫 A8</span></h2>
+    <p class="contact-hint" id="contactHint"><span class="en">Tell us what you’re making and your ideal timeline.</span><span class="zh" hidden>告訴我們您的專案與理想時程。</span></p>
     <form action="https://api.web3forms.com/submit" method="POST" class="modal-form">
       <input type="hidden" name="access_key" value="e2e60c07-6941-42dc-ab98-d3d7e046c1a5">
       <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
       
-      <input type="text" name="name" placeholder="Name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <textarea name="message" placeholder="Message..." rows="5" required></textarea>
+      <label for="contactName"><span class="en">Name</span><span class="zh" hidden>姓名</span></label>
+      <input id="contactName" type="text" name="name" autocomplete="name" required>
+      <label for="contactEmail"><span class="en">Email</span><span class="zh" hidden>電子郵件</span></label>
+      <input id="contactEmail" type="email" name="email" autocomplete="email" required>
+      <label for="contactMessage"><span class="en">Your project</span><span class="zh" hidden>您的專案</span></label>
+      <textarea id="contactMessage" name="message" rows="5" required></textarea>
       
-      <button type="submit" class="modal-submit">Send</button>
+      <button type="submit" class="modal-submit"><span class="en">Send inquiry</span><span class="zh" hidden>傳送詢問</span></button>
     </form>
+    <a class="direct-email" data-direct-email href="mailto:A8RECORDINGNYC@GMAIL.COM">A8RECORDINGNYC@GMAIL.COM</a>
   </div>
 </div>
 
@@ -790,7 +912,10 @@
         var chip = e.target.closest('.chip');
         if (!chip) return;
         var f = chip.dataset.filter;
-        chips.forEach(function(c){ c.classList.toggle('active', c === chip); });
+        chips.forEach(function(c){
+          c.classList.toggle('active', c === chip);
+          c.setAttribute('aria-pressed', c === chip ? 'true' : 'false');
+        });
         var visible = 0;
         sessions.forEach(function(s){
           var cats = (s.getAttribute('data-cat') || '').split(' ');
@@ -802,33 +927,55 @@
       });
     }
 
-    // MODAL WINDOW SCRIPT LOGIC
+    // Keep the contact dialog keyboard accessible and return to its opener.
     var modal = document.getElementById('contactModal');
     var closeBtn = document.getElementById('closeModal');
-    var mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
-
-    mailtoLinks.forEach(function(link) {
+    var opener = null;
+    var background = document.querySelectorAll('header.topbar, main, footer');
+    var previousOverflow = '';
+    document.querySelectorAll('a[href^="mailto:"]:not([data-direct-email])').forEach(function(link) {
       link.addEventListener('click', function(event) {
         event.preventDefault();
+        opener = link;
+        previousOverflow = document.body.style.overflow;
+        modal.hidden = false;
         modal.classList.add('active');
+        background.forEach(function(el){ el.inert = true; });
         document.body.style.overflow = 'hidden';
+        document.getElementById('contactName').focus();
       });
     });
-
     function hideModal() {
       modal.classList.remove('active');
-      document.body.style.overflow = '';
+      modal.hidden = true;
+      background.forEach(function(el){ el.inert = false; });
+      document.body.style.overflow = previousOverflow;
+      if (opener) opener.focus();
     }
-
     closeBtn.addEventListener('click', hideModal);
     modal.addEventListener('click', function(event) {
       if (event.target === modal) hideModal();
     });
     window.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape' && modal.classList.contains('active')) hideModal();
+      if (modal.hidden) return;
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        hideModal();
+      }
+      if (event.key === 'Tab') {
+        var focusable = modal.querySelectorAll('button, input:not([type="hidden"]):not([name="botcheck"]), textarea, a[href]');
+        var first = focusable[0];
+        var last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault(); last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault(); first.focus();
+        }
+      }
     });
   })();
 </script>
 
 </body>
 </html>
+
