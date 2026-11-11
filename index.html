@@ -8,11 +8,12 @@
 <meta property="og:title" content="A8 Recording NYC — Production &amp; Songwriting Studio">
 <meta property="og:description" content="A New York production and songwriting house — pop, R&amp;B, alternative, and cinematic work for international release.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://a8recordingnyc.studio/assets/identity/a8-identity-system.webp">
 <meta property="og:url" content="https://a8recordingnyc.studio/">
 <link rel="canonical" href="https://a8recordingnyc.studio/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Manrope:wght@400;500;700;800&family=Space+Mono:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;700;800&family=Space+Mono:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#121016;
@@ -511,6 +512,60 @@
     .services-grid{grid-template-columns:1fr;}.svc{padding:24px;}.profile .wrap{display:block;}.profile .detail{margin-top:20px;}
     .available{font-size:19px;}.record-label span{font-size:6px;}
   }
+
+  /* ── Identity layer: A8 brand system by PROJECT21 ─────────────────────
+     Signal's layout is unchanged. Neutral charcoal replaces the green-
+     tinted greys; identity yellow is the one accent. The four colourway
+     tiles appear only in the hero mark and the plates, never as UI. */
+  :root{
+    --bg:#0D0D0C;--bg-soft:#131312;--panel:#171716;--panel-line:#2F2F2D;
+    --text:#F2F1EC;--muted:#ABAAA3;--muted-dim:#96958E;
+    --accent:#F0E000;--accent-soft:rgba(240,224,0,.1);--accent-line:rgba(240,224,0,.38);
+    --display:'Anton','Noto Sans TC','Noto Sans JP',sans-serif;
+    --a8-pink:#F04060;--a8-yellow:#F0E000;--a8-green:#30A000;--a8-purple:#C000F0;
+    --cone:#545452;--cone-dark:#262625;
+  }
+  .topbar{background:rgba(13,13,12,.95);}
+  .cta-mini,.contact-pill.primary-contact,.chip.active,.modal-submit,.skip-link{color:#0D0D0C;}
+  ::selection{color:#0D0D0C;}
+  .modal-window{background:#151514;}
+  .word{font-family:var(--display);font-weight:400;font-size:17px;letter-spacing:.02em;}
+  .word .dot{font-family:var(--body);font-size:.5em;margin:0 .32em;vertical-align:.28em;}
+  h1,h2,h3{font-weight:400;}
+  h1.name{text-transform:uppercase;letter-spacing:0;line-height:1.02;max-width:12ch;font-size:clamp(52px,6.6vw,96px);}
+  h1.name .zh{text-transform:none;font-weight:700;letter-spacing:-.01em;line-height:1.2;}
+  .artist-name{letter-spacing:.005em;font-size:27px;}
+  .artist-name .cjk-alt{letter-spacing:.02em;}
+
+  /* hero panel: the A8 mark — two cone tiles + wordmark (plate 01) */
+  .signal-art{background:#0A0A09;flex-direction:column;gap:0;}
+  .a8-mark{width:76%;display:grid;grid-template-columns:1fr 1fr;row-gap:14px;}
+  .a8-tile{aspect-ratio:1;display:grid;place-items:center;}
+  .a8-tile i{width:84%;aspect-ratio:1;border-radius:50%;display:block;}
+  .a8-tile.cone{background:var(--cone);}
+  .a8-tile.cone i{background:radial-gradient(circle,#2a2a29 0%,#6d6d6a 62%,#8a8a86 86%);box-shadow:0 0 0 clamp(4px,.7vw,9px) #3a3a38;}
+  .a8-tile.rings{background:var(--cone-dark);}
+  .a8-tile.rings i{background:repeating-radial-gradient(circle,#0e0e0d 0 2px,#3c3c3a 3px 5px,#1a1a19 6px 8px),#1a1a19;mask:radial-gradient(circle,#000 70%,transparent 71%);}
+  .a8-word{font-family:'Anton',sans-serif;font-size:clamp(15px,1.9vw,26px);line-height:1;letter-spacing:.01em;color:var(--text);}
+  .a8-word.r{text-align:right;}
+  .a8-ways{position:absolute;left:22px;right:22px;bottom:44px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+  .a8-ways span{display:grid;grid-template-columns:1fr 1fr;height:22px;}
+  .a8-ways span::before{content:'';background:var(--cone);}
+  .a8-ways span::after{content:'';background:var(--c);}
+
+  /* identity band */
+  .identity .section-label{margin-bottom:14px;}
+  .identity-credit{font-family:var(--mono);font-size:12px;color:var(--muted);margin:0 0 28px;letter-spacing:.02em;}
+  .identity-credit a{color:var(--text);border-bottom:1px solid var(--accent-line);}
+  .identity-credit a:hover{border-bottom-color:var(--accent);}
+  .identity-grid{display:grid;grid-template-columns:16fr 9fr 9fr;gap:16px;align-items:start;}
+  .identity-grid figure{margin:0;background:#000;border:1px solid var(--panel-line);}
+  .identity-grid img{display:block;width:100%;height:auto;}
+  @media(max-width:1050px){.identity-grid{grid-template-columns:1fr 1fr;}.identity-grid figure:first-child{grid-column:1/-1;}}
+  @media(max-width:700px){
+    .a8-mark{width:58%;row-gap:8px;margin-top:-40px;}.a8-ways{bottom:34px;}.a8-ways span{height:14px;}
+    .identity-grid{gap:10px;}
+  }
 </style>
 </head>
 <body>
@@ -563,10 +618,13 @@
       <a class="contact-pill" href="mailto:A8RECORDINGNYC@GMAIL.COM">A8RECORDINGNYC@GMAIL.COM</a>
     </div>
       <a class="hero-listen" href="#work"><span class="en">Explore the records</span><span class="zh" hidden>探索作品</span> <span aria-hidden="true">↘</span></a>
-    </div><div class="signal-art" aria-hidden="true">
-    <div class="record"><div class="record-label">A8<span>RECORDING / NYC</span></div></div>
-    <div class="signal-bars"><i style="--level:22%"></i><i style="--level:48%"></i><i style="--level:76%"></i><i style="--level:32%"></i><i style="--level:62%"></i><i style="--level:92%"></i><i style="--level:54%"></i><i style="--level:36%"></i><i style="--level:72%"></i><i style="--level:100%"></i><i style="--level:64%"></i><i style="--level:28%"></i><i style="--level:58%"></i><i style="--level:86%"></i><i style="--level:44%"></i><i style="--level:20%"></i></div>
-    <span class="art-caption">SONGWRITING / PRODUCTION / SCORING</span>
+    </div><div class="signal-art" role="img" aria-label="A8 Recording Studio logo">
+    <div class="a8-mark" aria-hidden="true">
+      <span class="a8-tile cone"><i></i></span><span class="a8-tile rings"><i></i></span>
+      <span class="a8-word">A8 RECORDING</span><span class="a8-word r">STUDIO</span>
+    </div>
+    <div class="a8-ways" aria-hidden="true"><span style="--c:var(--a8-pink)"></span><span style="--c:var(--a8-yellow)"></span><span style="--c:var(--a8-green)"></span><span style="--c:var(--a8-purple)"></span></div>
+    <span class="art-caption" aria-hidden="true">SONGWRITING / PRODUCTION / SCORING</span>
   </div>
   </div>
 </section>
@@ -845,6 +903,18 @@
     <p class="en detail">Full studio production — from the first demo to final master — paired with original songwriting and industry-standard engineering for international release, broadcast, and screen. Rooted in jazz, composition, and music technology training from The New School and NYU, A8 fuses chart-ready hooks with avant-garde, artist-defining records, and extends into interactive scoring for modern games.</p>
     <p class="zh lede" hidden>A8 Recording NYC 致力於在主流吸引力與實驗聲響之間取得平衡的音樂製作廠牌與詞曲創作工作室。發跡於紐約，如今作品跨越國界與領域。</p>
     <p class="zh detail" hidden>我們提供從Demo錄音到最終母帶工程的完整錄音室製作，結合原創詞曲與創作，為國際串流、廣播與影視市場量身打造。團隊承 The New School 與 NYU 的爵士、作曲與音樂科技專業背景，作品游走於商業金曲與前衛、定義藝人風格與創意之間，並持續拓展至遊戲互動配樂領域。</p>
+  </div>
+</section>
+
+<section class="identity" id="identity" aria-labelledby="identityHeading">
+  <div class="wrap">
+    <h2 class="section-label" id="identityHeading"><span class="en">Identity</span><span class="zh" hidden>品牌識別</span></h2>
+    <p class="identity-credit"><span class="en">Brand identity · Art direction — PROJECT21</span><span class="zh" hidden>品牌識別 · 藝術指導 — PROJECT21</span></p>
+    <div class="identity-grid">
+      <figure><img src="assets/identity/a8-identity-system.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="A8 Recording identity system: speaker-cone tiles in pink, yellow, green and purple, the yellow speaker emblem, and a halftone card reading A8 Recording Music Base New York"></figure>
+      <figure><img src="assets/identity/a8-poster-2026-working.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="A8 Recording 2026 Working poster: inverted halftone portrait with ears and a speaker-cone tile"></figure>
+      <figure><img src="assets/identity/a8-totes.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="A8 Recording tote bags in four colourways"></figure>
+    </div>
   </div>
 </section>
 </main>
