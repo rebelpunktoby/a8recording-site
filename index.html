@@ -596,13 +596,16 @@
 
   .album-row{display:grid !important;grid-template-columns:52px auto 1fr auto;grid-template-areas:"th tag tag play" "th title meta play";column-gap:12px;row-gap:2px;align-items:center;}
   .album-row .thumb{grid-area:th;}.album-row .tag-label{grid-area:tag;}.album-row .title{grid-area:title;}.album-row .meta{grid-area:meta;}.album-row .play{grid-area:play;}
-  @media(min-width:1051px){
-    #project-wuthering-waves{order:2;}
-    #project-ash-valley,#project-idle-huntress,#project-mr-love{order:3;}
-  }
 
   .album-row,.album-row:hover{background:transparent !important;border:0 !important;border-bottom:1px solid var(--panel-line) !important;border-radius:0 !important;padding:10px 0 !important;}
   .album-row .tag-label{color:var(--muted-dim,var(--muted));font-weight:400;}
+
+  .group-head{grid-column:1/-1;display:flex;align-items:center;gap:14px;margin:18px 0 -4px;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--text);}
+  .group-head:first-child{margin-top:0;}
+  .group-head::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);flex:0 0 auto;}
+  .group-head::after{content:"";flex:1;height:1px;background:var(--panel-line);order:2;}
+  .group-head .gh-n{order:3;color:var(--muted);letter-spacing:.12em;}
+  .project-grid.filtered .group-head{display:none;}
 </style>
 </head>
 <body>
@@ -684,6 +687,7 @@
     
 
     <div class="project-grid">
+    <p class="group-head"><span class="en">Records</span><span class="zh" hidden>唱片</span><span class="gh-n">03</span></p>
 <article id="project-eric-leo" class="session" data-cat="poprnb">
       <div class="session-head">
         <h3 class="artist-name">Eric Leo</h3>
@@ -763,35 +767,9 @@
       </ol>
     </article>
 
-    <article id="project-ash-valley" class="session film" data-cat="film">
-      <div class="session-head">
-        <h3 class="artist-name">Echos of Ash Valley</h3>
-        <p class="genre-tag en">Cinematic Scoring · Venice Immersive 2024</p>
-        <p class="genre-tag zh" hidden>電影配樂 / 沉浸式科幻 · 2024 威尼斯沉浸式單元</p>
-      </div>
-      <p class="standout en">Lyric and vocal writing for the score of this immersive sci-fi film (dir. Shu Zhu) — official selection, Venice Immersive, La Biennale di Venezia (81st Venice International Film Festival).</p>
-      <p class="standout zh" hidden>為此沉浸式科幻 VR 電影（導演 Shu Zhu）之配樂創作歌詞與人聲；入選 2024 威尼斯影展沉浸式單元（第 81 屆威尼斯國際影展）。</p>
-      
-      <ol class="reel-list">
-        <li><a href="https://www.youtube.com/watch?v=9aS_Rc8XxU0" target="_blank" rel="noopener">
-          <span class="thumb"><img src="assets/thumbs/yt_9aS_Rc8XxU0.webp" alt="" loading="lazy" decoding="async"></span><span class="r-idx"></span>
-          <span class="reel-main">
-            <span class="reel-title">Official Trailer</span>
-            <span class="reel-meta">Film Scoring / Cinema Writing</span>
-          </span>
-          <span class="play">▸ <span class="en">Watch Trailer</span><span class="zh" hidden>觀看預告</span></span>
-        </a></li>
-        <li><a href="https://untitled.stream/library/project/uAwz0DsY9GpeebN4rsgYS" target="_blank" rel="noopener">
-          <span class="r-idx"></span>
-          <span class="reel-main">
-            <span class="reel-title">Original Score</span>
-            <span class="reel-meta">Cinematic / Immersive</span>
-          </span>
-          <span class="play">▸ <span class="en">Listen</span><span class="zh" hidden>聆聽</span></span>
-        </a></li>
-      </ol>
-    </article>
 
+
+    <p class="group-head"><span class="en">Screen &amp; Games</span><span class="zh" hidden>影視與遊戲</span><span class="gh-n">04</span></p>
     <article id="project-wuthering-waves" class="session" data-cat="games">
       <div class="session-head">
         <h3 class="artist-name">Wuthering Waves <span class="cjk-alt">鳴潮</span></h3>
@@ -865,7 +843,26 @@
 
       </ol>
     </article>
+    <article id="project-mr-love" class="session" data-cat="games">
+      <div class="session-head">
+        <h3 class="artist-name">Mr Love: Queen's Choice <span class="cjk-alt">戀與製作人</span></h3>
+        <p class="genre-tag en">Game Feature Music · Papergames</p>
+        <p class="genre-tag zh" hidden>遊戲宣傳配樂 · 疊紙遊戲</p>
+      </div>
+      <p class="standout en">Music for the summer feature film of Papergames' otome hit.</p>
+      <p class="standout zh" hidden>為疊紙遊戲人氣乙女遊戲《戀與製作人》夏日資料片製作音樂。</p>
 
+      <ol class="reel-list">
+        <li><a href="https://www.youtube.com/watch?v=KQZmH5hi4ks" target="_blank" rel="noopener">
+          <span class="thumb"><img src="assets/thumbs/yt_KQZmH5hi4ks.webp" alt="" loading="lazy" decoding="async"></span><span class="r-idx"></span>
+          <span class="reel-main">
+            <span class="reel-title">DROP THE BEAT</span>
+            <span class="reel-meta"><span class="en">Summer Feature</span><span class="zh" hidden>夏日資料片</span> · Electronic</span>
+          </span>
+          <span class="play">▸ <span class="en">Watch</span><span class="zh" hidden>觀看</span></span>
+        </a></li>
+      </ol>
+    </article>
     <article id="project-idle-huntress" class="session" data-cat="games">
       <div class="session-head">
         <h3 class="artist-name">Idle Huntress <span class="cjk-alt">ドラゴンとガールズ交響曲</span></h3>
@@ -886,23 +883,31 @@
         </a></li>
       </ol>
     </article>
-    <article id="project-mr-love" class="session" data-cat="games">
+    <article id="project-ash-valley" class="session film" data-cat="film">
       <div class="session-head">
-        <h3 class="artist-name">Mr Love: Queen's Choice <span class="cjk-alt">戀與製作人</span></h3>
-        <p class="genre-tag en">Game Feature Music · Papergames</p>
-        <p class="genre-tag zh" hidden>遊戲宣傳配樂 · 疊紙遊戲</p>
+        <h3 class="artist-name">Echos of Ash Valley</h3>
+        <p class="genre-tag en">Cinematic Scoring · Venice Immersive 2024</p>
+        <p class="genre-tag zh" hidden>電影配樂 / 沉浸式科幻 · 2024 威尼斯沉浸式單元</p>
       </div>
-      <p class="standout en">Music for the summer feature film of Papergames' otome hit.</p>
-      <p class="standout zh" hidden>為疊紙遊戲人氣乙女遊戲《戀與製作人》夏日資料片製作音樂。</p>
-
+      <p class="standout en">Lyric and vocal writing for the score of this immersive sci-fi film (dir. Shu Zhu) — official selection, Venice Immersive, La Biennale di Venezia (81st Venice International Film Festival).</p>
+      <p class="standout zh" hidden>為此沉浸式科幻 VR 電影（導演 Shu Zhu）之配樂創作歌詞與人聲；入選 2024 威尼斯影展沉浸式單元（第 81 屆威尼斯國際影展）。</p>
+      
       <ol class="reel-list">
-        <li><a href="https://www.youtube.com/watch?v=KQZmH5hi4ks" target="_blank" rel="noopener">
-          <span class="thumb"><img src="assets/thumbs/yt_KQZmH5hi4ks.webp" alt="" loading="lazy" decoding="async"></span><span class="r-idx"></span>
+        <li><a href="https://www.youtube.com/watch?v=9aS_Rc8XxU0" target="_blank" rel="noopener">
+          <span class="thumb"><img src="assets/thumbs/yt_9aS_Rc8XxU0.webp" alt="" loading="lazy" decoding="async"></span><span class="r-idx"></span>
           <span class="reel-main">
-            <span class="reel-title">DROP THE BEAT</span>
-            <span class="reel-meta"><span class="en">Summer Feature</span><span class="zh" hidden>夏日資料片</span> · Electronic</span>
+            <span class="reel-title">Official Trailer</span>
+            <span class="reel-meta">Film Scoring / Cinema Writing</span>
           </span>
-          <span class="play">▸ <span class="en">Watch</span><span class="zh" hidden>觀看</span></span>
+          <span class="play">▸ <span class="en">Watch Trailer</span><span class="zh" hidden>觀看預告</span></span>
+        </a></li>
+        <li><a href="https://untitled.stream/library/project/uAwz0DsY9GpeebN4rsgYS" target="_blank" rel="noopener">
+          <span class="r-idx"></span>
+          <span class="reel-main">
+            <span class="reel-title">Original Score</span>
+            <span class="reel-meta">Cinematic / Immersive</span>
+          </span>
+          <span class="play">▸ <span class="en">Listen</span><span class="zh" hidden>聆聽</span></span>
         </a></li>
       </ol>
     </article>
@@ -1048,6 +1053,7 @@
           s.hidden = !show;
           if (show) visible++;
         });
+        var grid=document.querySelector('.project-grid'); if(grid) grid.classList.toggle('filtered', f !== 'all');
         if (emptyMsg) emptyMsg.style.display = visible === 0 ? 'block' : 'none';
       });
     }
