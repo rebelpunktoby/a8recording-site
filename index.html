@@ -683,6 +683,9 @@
     font-size:1.14em;line-height:.9;letter-spacing:0;margin:.02em 0 .06em .55em;text-shadow:0 0 .5em rgba(240,224,0,.18);}
   h1.name .h-w::after{display:block;-webkit-text-stroke:1px rgba(240,224,0,.26);}
   @media(max-width:700px){h1.name .h-w{margin-left:.4em;}}
+  /* list markers: a small dot instead of numbers */
+  .track-list .idx::before,.reel-list .r-idx::before{content:"";display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--muted-dim,var(--muted));vertical-align:middle;opacity:.8;}
+  .track-list a:hover .idx::before,.reel-list a:hover .r-idx::before{background:var(--accent);opacity:1;}
 </style>
 </head>
 <body>
@@ -764,7 +767,7 @@
     
 
     <div class="project-grid">
-    <p class="group-head"><span class="en">Records</span><span class="zh" hidden>唱片</span><span class="gh-n">03</span></p>
+    <p class="group-head"><span class="en">Records</span><span class="zh" hidden>唱片</span></p>
 <article id="project-eric-leo" class="session" data-cat="poprnb">
       <div class="session-head">
         <h3 class="artist-name">Eric Leo</h3>
@@ -846,7 +849,7 @@
 
 
 
-    <p class="group-head"><span class="en">Screen &amp; Games</span><span class="zh" hidden>影視與遊戲</span><span class="gh-n">04</span></p>
+    <p class="group-head"><span class="en">Screen &amp; Games</span><span class="zh" hidden>影視與遊戲</span></p>
     <article id="project-wuthering-waves" class="session" data-cat="games">
       <div class="session-head">
         <h3 class="artist-name">Wuthering Waves <span class="cjk-alt">鳴潮</span></h3>
