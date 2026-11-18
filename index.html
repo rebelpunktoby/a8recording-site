@@ -687,6 +687,14 @@
   .track-list .idx::before,.reel-list .r-idx::before{content:"";display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--muted-dim,var(--muted));vertical-align:middle;opacity:.8;}
   .track-list a:hover .idx::before,.reel-list a:hover .r-idx::before{background:var(--accent);opacity:1;}
   .session .standout{margin-bottom:22px;}
+  #project-qi-xia{grid-column:1/-1;}
+  @media(min-width:701px){
+    #project-qi-xia{display:grid;grid-template-columns:1.1fr 1fr;column-gap:56px;align-items:start;}
+    #project-qi-xia .session-head,#project-qi-xia .standout{grid-column:1;}
+    #project-qi-xia .track-list{grid-column:2;grid-row:1 / span 2;align-self:center;}
+  }
+  #project-qi-xia .track-list .thumb{width:88px;height:88px;}
+  #project-qi-xia .track-list .t-genre{padding-left:128px !important;margin-top:-34px;}
 </style>
 </head>
 <body>
@@ -762,6 +770,7 @@
       <button class="chip" type="button" data-filter="electronic" aria-pressed="false"><span class="en">Electronic</span><span class="zh" hidden>電子</span></button>
       <button class="chip" type="button" data-filter="rock" aria-pressed="false"><span class="en">Rock</span><span class="zh" hidden>搖滾</span></button>
       <button class="chip" type="button" data-filter="film" aria-pressed="false"><span class="en">Film</span><span class="zh" hidden>影視</span></button>
+      <button class="chip" type="button" data-filter="experimental" aria-pressed="false"><span class="en">Experimental</span><span class="zh" hidden>實驗</span></button>
       <button class="chip" type="button" data-filter="games" aria-pressed="false"><span class="en">Games</span><span class="zh" hidden>遊戲</span></button>
     </div>
 
@@ -980,6 +989,22 @@
             <span class="reel-meta">Cinematic / Immersive</span>
           </span>
           <span class="play">▸ <span class="en">Listen</span><span class="zh" hidden>聆聽</span></span>
+        </a></li>
+      </ol>
+    </article>
+    <p class="group-head"><span class="en">New Music</span><span class="zh" hidden>新音樂</span></p>
+    <article id="project-qi-xia" class="session" data-cat="experimental">
+      <div class="session-head">
+        <h3 class="artist-name">Qi Xia</h3>
+        <p class="genre-tag en">Experimental · Contemporary · Avant-Garde</p>
+        <p class="genre-tag zh" hidden>實驗 · 當代 · 前衛</p>
+      </div>
+      <p class="standout en">A new-music collaboration with composer Qi Xia, rooted in conservatory composition and built from odd samples, processed textures and open sound experiments — a palette that reaches naturally toward film and game scoring.</p>
+      <p class="standout zh" hidden>與作曲家 Qi Xia 的新音樂合作，根植於音樂學院的作曲訓練，以奇異取樣、處理過的音色質感與開放的聲音實驗構成——其聲響語彙自然延伸至影視與遊戲配樂。</p>
+      <ol class="track-list">
+        <li><a href="https://soundcloud.com/qi-xia-978413194/sugar" target="_blank" rel="noopener">
+          <span class="thumb"><img src="assets/thumbs/sc_sugar.webp" alt="" loading="lazy" decoding="async"></span><span class="idx"></span><span class="t-title">Sugar</span>
+          <span class="t-genre"><span class="en">Experimental / Sound Collage</span><span class="zh" hidden>實驗 / 聲音拼貼</span></span><span class="play">▸ <span class="en">Listen</span><span class="zh" hidden>聆聽</span></span>
         </a></li>
       </ol>
     </article>
