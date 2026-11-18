@@ -468,7 +468,7 @@
   .collab-note{font-style:normal;font-size:15px;margin:0 0 24px;max-width:68ch;}
   .work-filters{margin-bottom:32px;gap:8px;}
   .chip{border-radius:4px;font-size:11px;padding:9px 16px;}
-  .project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:start;}
+  .project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch;}
   .project-grid .session{min-width:0;padding:28px 24px;background:var(--panel);border:1px solid var(--panel-line);border-radius:2px;}
   .project-grid .session:first-of-type{padding-top:28px;border-top:1px solid var(--panel-line);}
   .session-head{display:block;margin-bottom:18px;}
@@ -502,15 +502,7 @@
   footer{padding:70px 0;background:var(--panel);}
   .available{font-size:22px;line-height:1.6;}
   .modal-window{background:#151A16;}
-  @media(min-width:1051px){
-    #project-ash-valley{grid-column:span 2;}
-    #project-ash-valley .reel-list{display:grid;grid-template-columns:1fr 1fr;gap:0 24px;}
-    #project-wuthering-waves{grid-column:1/-1;order:2;}
-    #project-wuthering-waves .reel-list{grid-template-columns:repeat(4,minmax(0,1fr));gap:0 22px;}
-    #project-wuthering-waves .reel-list a{flex-wrap:wrap;align-items:flex-start;}
-    #project-wuthering-waves .reel-list .reel-main{flex:1 1 calc(100% - 30px);}
-    #project-wuthering-waves .reel-list .play{flex-basis:100%;margin-top:10px;}
-  }
+  @media(min-width:701px) and (max-width:1050px){#project-ash-valley,#project-idle-huntress{grid-column:span 2;}}
   .artist-name .cjk-alt{display:inline-block;}
   .r-cn,.r-en{white-space:nowrap;}
   @media(max-width:1050px){.hero-inner{gap:32px;}.project-grid{grid-template-columns:repeat(2,minmax(0,1fr));}#project-wuthering-waves{grid-column:span 2;}}
@@ -650,7 +642,6 @@
       <button class="chip active" type="button" data-filter="all" aria-pressed="true"><span class="en">All</span><span class="zh" hidden>全部</span></button>
       <button class="chip" type="button" data-filter="poprnb" aria-pressed="false"><span class="en">Pop &amp; R&amp;B</span><span class="zh" hidden>流行 &amp; R&amp;B</span></button>
       <button class="chip" type="button" data-filter="electronic" aria-pressed="false"><span class="en">Electronic</span><span class="zh" hidden>電子</span></button>
-      <button class="chip" type="button" data-filter="rock" aria-pressed="false"><span class="en">Rock</span><span class="zh" hidden>搖滾</span></button>
       <button class="chip" type="button" data-filter="film" aria-pressed="false"><span class="en">Film</span><span class="zh" hidden>影視</span></button>
       <button class="chip" type="button" data-filter="games" aria-pressed="false"><span class="en">Games</span><span class="zh" hidden>遊戲</span></button>
     </div>
@@ -717,27 +708,6 @@
       </ol>
     </article>
 
-    <article id="project-chantal-camus" class="session" data-cat="rock">
-      <div class="session-head">
-        <h3 class="artist-name">Chantal Camus</h3>
-        <p class="genre-tag en">Alternative Rock · Indie Rock</p>
-        <p class="genre-tag zh" hidden>另類搖滾 / 獨立搖滾</p>
-      </div>
-      <p class="standout en">Riff-driven alt-rock built on her vocalist–bassist identity; lead singles in official rotation on Texas radio.</p>
-      <p class="standout zh" hidden>以「主唱兼貝斯手」為核心的 riff 驅動另類搖滾；主打單曲獲德州主流電台歌單輪播。</p>
-
-      <span class="singles-label"><span class="en">Singles</span><span class="zh" hidden>單曲</span></span>
-      <ol class="track-list">
-        <li><a href="https://www.youtube.com/watch?v=Jo3j7008mDc" target="_blank" rel="noopener">
-          <span class="idx"></span><span class="t-title">Capital A</span>
-          <span class="t-genre en">Alt-Rock / Indie Rock</span><span class="t-genre zh" hidden>另類搖滾 / 獨立搖滾</span><span class="play">▸ Listen</span>
-        </a></li>
-        <li><a href="https://www.youtube.com/watch?v=OvG5b63NFkU" target="_blank" rel="noopener">
-          <span class="idx"></span><span class="t-title">Heartache</span>
-          <span class="t-genre">Emo Rock / Grunge</span><span class="play">▸ Listen</span>
-        </a></li>
-      </ol>
-    </article>
 
     <article id="project-ash-valley" class="session film" data-cat="film">
       <div class="session-head">
