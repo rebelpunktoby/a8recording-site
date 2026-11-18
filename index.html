@@ -13,7 +13,7 @@
 <link rel="canonical" href="https://a8recordingnyc.studio/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@1&family=Manrope:wght@400;500;700;800&family=Space+Mono:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;700;800&family=Space+Mono:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#121016;
@@ -653,6 +653,18 @@
   @media(prefers-reduced-motion:no-preference){.hero::before{animation:bgDrift 26s ease-in-out infinite alternate;}}
   @keyframes bgDrift{to{transform:translate3d(2.5%,-2%,0) scale(1.05);}}
   .signal-art{background:linear-gradient(160deg,rgba(18,18,17,.72),rgba(8,8,8,.88));backdrop-filter:blur(2px);}
+
+  /* hero v3: stay in A8's own type — Anton throughout, a little more air, "written" as yellow outline */
+  h1.name{font-size:clamp(52px,6.4vw,98px);line-height:.98;letter-spacing:.012em;}
+  h1.name .h-w{font-family:var(--display);font-style:normal;font-weight:400;text-transform:uppercase;font-size:1em;line-height:inherit;letter-spacing:.06em;margin:0 0 0 .9em;
+    color:transparent;-webkit-text-stroke:1.5px var(--accent);text-shadow:none;}
+  h1.name .h-w::after{-webkit-text-stroke:1px rgba(240,224,0,.22);}
+  h1.name .h-l{letter-spacing:.012em;}
+  @media(max-width:700px){h1.name{font-size:clamp(42px,12.6vw,60px);}h1.name .h-w{margin-left:.6em;-webkit-text-stroke-width:1.2px;}}
+  h1.name{line-height:1.06;}
+  h1.name .h-l{letter-spacing:.03em;}
+  h1.name .h-w{letter-spacing:.08em;}
+  h1.name .h-w::after{display:none;}
 </style>
 </head>
 <body>
