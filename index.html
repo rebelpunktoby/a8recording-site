@@ -502,7 +502,6 @@
   footer{padding:70px 0;background:var(--panel);}
   .available{font-size:22px;line-height:1.6;}
   .modal-window{background:#151A16;}
-  @media(min-width:701px) and (max-width:1050px){#project-ash-valley,#project-idle-huntress{grid-column:span 2;}}
   .artist-name .cjk-alt{display:inline-block;}
   .r-cn,.r-en{white-space:nowrap;}
   @media(max-width:1050px){.hero-inner{gap:32px;}.project-grid{grid-template-columns:repeat(2,minmax(0,1fr));}#project-wuthering-waves{grid-column:span 2;}}
@@ -568,6 +567,38 @@
   @media(max-width:700px){
     .a8-mark{width:58%;row-gap:8px;margin-top:-40px;}.a8-ways{bottom:34px;}.a8-ways span{height:14px;}
     .identity-grid{gap:10px;}
+  }
+
+  /* link previews */
+  .thumb{position:relative;flex:0 0 auto;display:block;overflow:hidden;border-radius:5px;background:linear-gradient(135deg,#2b2431,#141117);}
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .5s;filter:saturate(.9);}
+  a:hover .thumb img{transform:scale(1.06);filter:saturate(1.1);}
+  .thumb.ph::after{content:"A8";position:absolute;inset:0;display:grid;place-items:center;font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--accent);opacity:.8;}
+  .track-list a,.album-row{align-items:center;}
+  .track-list .thumb{width:48px;height:48px;order:0;}
+  .track-list .idx{order:-1;}
+  .album-row .thumb{width:52px;height:52px;}
+  .track-list .t-genre,.track-list .t-extra{padding-left:88px !important;}
+  .reel-list a{flex-wrap:wrap;align-items:flex-start;}
+  .reel-list .thumb{flex:0 0 100%;aspect-ratio:16/9;border-radius:6px;margin-bottom:12px;order:-2;}
+  .reel-list .thumb::before{content:"";position:absolute;z-index:1;left:12px;bottom:12px;width:34px;height:34px;border-radius:50%;background:rgba(10,8,12,.62);backdrop-filter:blur(4px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.18);transition:background .3s;}
+  .reel-list .thumb::after{content:"";position:absolute;z-index:2;left:26px;bottom:23px;border-left:9px solid #fff;border-top:6px solid transparent;border-bottom:6px solid transparent;}
+  .reel-list a:hover .thumb::before{background:var(--accent);}
+  .reel-list .thumb.ph::after{border:0;left:0;bottom:0;}
+  .reel-list .reel-main{flex:1 1 0;min-width:0;}
+  .reel-list .play{margin-left:26px;}
+  @media(min-width:1051px){
+    #project-wuthering-waves{grid-column:1/-1;}
+    #project-wuthering-waves .reel-list{grid-template-columns:repeat(4,minmax(0,1fr));gap:0 22px;}
+    #project-wuthering-waves .reel-list .play{flex-basis:100%;margin-top:8px;}
+  }
+  @media(max-width:700px){.track-list .t-genre,.track-list .t-extra{padding-left:86px !important;}}
+
+  .album-row{display:grid !important;grid-template-columns:52px auto 1fr auto;grid-template-areas:"th tag tag play" "th title meta play";column-gap:12px;row-gap:2px;align-items:center;}
+  .album-row .thumb{grid-area:th;}.album-row .tag-label{grid-area:tag;}.album-row .title{grid-area:title;}.album-row .meta{grid-area:meta;}.album-row .play{grid-area:play;}
+  @media(min-width:1051px){
+    #project-wuthering-waves{order:2;}
+    #project-ash-valley,#project-idle-huntress,#project-mr-love{order:3;}
   }
 </style>
 </head>
@@ -642,6 +673,7 @@
       <button class="chip active" type="button" data-filter="all" aria-pressed="true"><span class="en">All</span><span class="zh" hidden>全部</span></button>
       <button class="chip" type="button" data-filter="poprnb" aria-pressed="false"><span class="en">Pop &amp; R&amp;B</span><span class="zh" hidden>流行 &amp; R&amp;B</span></button>
       <button class="chip" type="button" data-filter="electronic" aria-pressed="false"><span class="en">Electronic</span><span class="zh" hidden>電子</span></button>
+      <button class="chip" type="button" data-filter="rock" aria-pressed="false"><span class="en">Rock</span><span class="zh" hidden>搖滾</span></button>
       <button class="chip" type="button" data-filter="film" aria-pressed="false"><span class="en">Film</span><span class="zh" hidden>影視</span></button>
       <button class="chip" type="button" data-filter="games" aria-pressed="false"><span class="en">Games</span><span class="zh" hidden>遊戲</span></button>
     </div>
@@ -659,7 +691,7 @@
       <p class="standout zh" hidden>跨曲風 R&amp;B，橫跨 Neo-Soul、Afrobeat 與嘻哈，以直接而富旋律的嗓音為核心。〈Rain〉取樣王家衛《花樣年華》。</p>
 
       <a class="album-row" href="https://on.soundcloud.com/xTGjSKMl7R88owU4l7" target="_blank" rel="noopener">
-        <span class="tag-label">ALBUM</span>
+        <span class="thumb"><img src="assets/thumbs/sc_24oclock.webp" alt="" loading="lazy" decoding="async"></span><span class="tag-label">ALBUM</span>
         <span class="title">“24 O’Clock”</span>
         <span class="meta">(R&amp;B / Neo-Soul)</span>
         <span class="play" style="margin-left:auto;">▸ Listen</span>
@@ -668,15 +700,15 @@
       <span class="singles-label"><span class="en">Singles</span><span class="zh" hidden>單曲</span></span>
       <ol class="track-list">
         <li><a href="https://youtu.be/DWR2JrDC5kE" target="_blank" rel="noopener">
-          <span class="idx"></span><span class="t-title">Rain (Mood for Love)</span>
+          <span class="thumb"><img src="assets/thumbs/yt_DWR2JrDC5kE.webp" alt="" loading="lazy" decoding="async"></span><span class="idx"></span><span class="t-title">Rain (Mood for Love)</span>
           <span class="t-genre">Afrobeat / R&amp;B</span><span class="t-extra">feat. Toby Hysan</span><span class="play">▸ Listen</span>
         </a></li>
         <li><a href="https://youtu.be/Nkgu44pjRZI" target="_blank" rel="noopener">
-          <span class="idx"></span><span class="t-title">Angel Dust</span>
+          <span class="thumb"><img src="assets/thumbs/yt_Nkgu44pjRZI.webp" alt="" loading="lazy" decoding="async"></span><span class="idx"></span><span class="t-title">Angel Dust</span>
           <span class="t-genre en">Melodic Trap / Psychedelic Hip-Hop</span><span class="t-genre zh" hidden>Melodic Trap / 迷幻嘻哈</span><span class="play">▸ Listen</span>
         </a></li>
         <li><a href="https://untitled.stream/library/track/X1j9gSyvFvgaNFcsLyDgC" target="_blank" rel="noopener">
-          <span class="idx"></span><span class="t-title">GONE MiSSiNG</span>
+          <span class="thumb ph" aria-hidden="true"></span><span class="idx"></span><span class="t-title">GONE MiSSiNG</span>
           <span class="t-genre en">Contemporary Hip-Hop / R&amp;B</span><span class="t-genre zh" hidden>當代嘻哈 / R&amp;B</span><span class="play">▸ Listen</span>
         </a></li>
       </ol>
@@ -694,20 +726,39 @@
       <span class="singles-label"><span class="en">Tracks</span><span class="zh" hidden>單曲</span></span>
       <ol class="track-list">
         <li><a href="https://music.163.com/#/song?id=1381125345" target="_blank" rel="noopener">
-          <span class="idx"></span><span class="t-title">你來的那天</span>
+          <span class="thumb"><img src="assets/thumbs/ne_1381125345.webp" alt="" loading="lazy" decoding="async"></span><span class="idx"></span><span class="t-title">你來的那天</span>
           <span class="t-genre en">Melodic EDM / Future Bass Pop</span><span class="t-genre zh" hidden>Melodic EDM / Future Bass Pop</span><span class="play">▸ Listen</span>
         </a></li>
         <li><a href="https://music.163.com/#/song?id=1382808465" target="_blank" rel="noopener">
-          <span class="idx"></span><span class="t-title">LOST</span>
+          <span class="thumb"><img src="assets/thumbs/ne_1382808465.webp" alt="" loading="lazy" decoding="async"></span><span class="idx"></span><span class="t-title">LOST</span>
           <span class="t-genre en">Pop EDM / Melodic Dubstep</span><span class="t-genre zh" hidden>Pop EDM / Melodic Dubstep</span><span class="play">▸ Listen</span>
         </a></li>
         <li><a href="https://music.163.com/#/song?id=2144326358" target="_blank" rel="noopener">
-          <span class="idx"></span><span class="t-title">Waken</span>
+          <span class="thumb"><img src="assets/thumbs/ne_2144326358.webp" alt="" loading="lazy" decoding="async"></span><span class="idx"></span><span class="t-title">Waken</span>
           <span class="t-genre en">Melodic EDM / Cinematic Pop</span><span class="t-genre zh" hidden>Melodic EDM / Cinematic Pop</span><span class="play">▸ Listen</span>
         </a></li>
       </ol>
     </article>
 
+
+    <article id="project-chantal-camus" class="session" data-cat="rock">
+      <div class="session-head">
+        <h3 class="artist-name">Chantal Camus</h3>
+        <p class="genre-tag en">Alternative Rock · Indie Rock</p>
+        <p class="genre-tag zh" hidden>另類搖滾 / 獨立搖滾</p>
+      </div>
+      <p class="standout en">Riff-driven alt-rock built on her vocalist–bassist identity; lead singles in official rotation on Texas radio.</p>
+      <p class="standout zh" hidden>以「主唱兼貝斯手」為核心的 riff 驅動另類搖滾；主打單曲獲德州主流電台歌單輪播。</p>
+
+      <span class="singles-label"><span class="en">Single</span><span class="zh" hidden>單曲</span></span>
+      <ol class="reel-list">
+        <li><a href="https://www.youtube.com/watch?v=OvG5b63NFkU" target="_blank" rel="noopener">
+          <span class="thumb"><img src="assets/thumbs/yt_OvG5b63NFkU.webp" alt="" loading="lazy" decoding="async"></span><span class="r-idx"></span>
+          <span class="reel-main"><span class="reel-title">Heartache</span><span class="reel-meta">Emo Rock / Grunge</span></span>
+          <span class="play">▸ <span class="en">Watch</span><span class="zh" hidden>觀看</span></span>
+        </a></li>
+      </ol>
+    </article>
 
     <article id="project-ash-valley" class="session film" data-cat="film">
       <div class="session-head">
@@ -720,7 +771,7 @@
       
       <ol class="reel-list">
         <li><a href="https://www.youtube.com/watch?v=9aS_Rc8XxU0" target="_blank" rel="noopener">
-          <span class="r-idx"></span>
+          <span class="thumb"><img src="assets/thumbs/yt_9aS_Rc8XxU0.webp" alt="" loading="lazy" decoding="async"></span><span class="r-idx"></span>
           <span class="reel-main">
             <span class="reel-title">Official Trailer</span>
             <span class="reel-meta">Film Scoring / Cinema Writing</span>
@@ -750,7 +801,7 @@
       <ol class="reel-list">
         
         <li class="en"><a href="https://www.youtube.com/watch?v=a5lSxOEDm5U" target="_blank" rel="noopener">
-          <span class="r-idx"></span>
+          <span class="thumb"><img src="assets/thumbs/yt_a5lSxOEDm5U.webp" alt="" loading="lazy" decoding="async"></span><span class="r-idx"></span>
           <span class="reel-main">
             <span class="reel-title">The Unchosen Dream <span class="r-cn">未選擇的夢</span></span>
             <span class="reel-meta">Ver. 3.4 PV · Cyberpunk: Edgerunners × WuWa · Cinematic / Funk / Disco</span>
@@ -758,7 +809,7 @@
           <span class="play">▸ Watch Trailer</span>
         </a></li>
         <li class="zh" hidden><a href="https://www.bilibili.com/video/BV1dKVh62Etw/?p=2" target="_blank" rel="noopener">
-          <span class="r-idx"></span>
+          <span class="thumb"><img src="assets/thumbs/yt_a5lSxOEDm5U.webp" alt="" loading="lazy" decoding="async"></span><span class="r-idx"></span>
           <span class="reel-main">
             <span class="reel-title">未選擇的夢 <span class="r-en">The Unchosen Dream</span></span>
             <span class="reel-meta">Ver. 3.4 PV · Cyberpunk: Edgerunners × WuWa · Cinematic / Funk / Disco</span>
@@ -767,7 +818,7 @@
         </a></li>
 
         <li><a href="https://www.bilibili.com/video/BV1mpjhzdEuP/" target="_blank" rel="noopener">
-          <span class="r-idx"></span>
+          <span class="thumb"><img src="assets/thumbs/bb_cityofglory.webp" alt="" loading="lazy" decoding="async"></span><span class="r-idx"></span>
           <span class="reel-main">
             <span class="reel-title"><span class="en">City of Glory <span class="r-cn">榮光之都</span></span><span class="zh" hidden>榮光之都 <span class="r-en">City of Glory</span></span></span>
             <span class="reel-meta">Special Feature · Cinematic / Electronic Orchestral</span>
@@ -776,7 +827,7 @@
         </a></li>
 
         <li class="en"><a href="https://www.youtube.com/watch?v=x7jDodMbOG4" target="_blank" rel="noopener">
-          <span class="r-idx"></span>
+          <span class="thumb"><img src="assets/thumbs/yt_x7jDodMbOG4.webp" alt="" loading="lazy" decoding="async"></span><span class="r-idx"></span>
           <span class="reel-main">
             <span class="reel-title">Each Choice You Made <span class="r-cn">每一次抉擇</span></span>
             <span class="reel-meta">The Game Awards 2024 Trailer · Cinematic</span>
@@ -784,7 +835,7 @@
           <span class="play">▸ Watch Trailer</span>
         </a></li>
         <li class="zh" hidden><a href="https://www.bilibili.com/video/BV1p5qhYsEW6/?p=2" target="_blank" rel="noopener">
-          <span class="r-idx"></span>
+          <span class="thumb"><img src="assets/thumbs/yt_x7jDodMbOG4.webp" alt="" loading="lazy" decoding="async"></span><span class="r-idx"></span>
           <span class="reel-main">
             <span class="reel-title">每一次抉擇 <span class="r-en">Each Choice You Made</span></span>
             <span class="reel-meta">The Game Awards 2024 Trailer · Cinematic</span>
@@ -793,7 +844,7 @@
         </a></li>
 
         <li class="en"><a href="https://www.youtube.com/watch?v=uOXpjOH_dNk" target="_blank" rel="noopener">
-          <span class="r-idx"></span>
+          <span class="thumb"><img src="assets/thumbs/yt_uOXpjOH_dNk.webp" alt="" loading="lazy" decoding="async"></span><span class="r-idx"></span>
           <span class="reel-main">
             <span class="reel-title">Homecoming <span class="r-cn">返校日</span></span>
             <span class="reel-meta">The Game Awards 2025 Trailer · Cinematic</span>
@@ -801,7 +852,7 @@
           <span class="play">▸ Watch Trailer</span>
         </a></li>
         <li class="zh" hidden><a href="https://www.bilibili.com/video/BV13XmVB3E5Y/?p=2" target="_blank" rel="noopener">
-          <span class="r-idx"></span>
+          <span class="thumb"><img src="assets/thumbs/yt_uOXpjOH_dNk.webp" alt="" loading="lazy" decoding="async"></span><span class="r-idx"></span>
           <span class="reel-main">
             <span class="reel-title">返校日 <span class="r-en">Homecoming</span></span>
             <span class="reel-meta">The Game Awards 2025 Trailer · Cinematic</span>
@@ -823,10 +874,30 @@
       
       <ol class="reel-list">
         <li><a href="https://www.youtube.com/watch?v=Rf8m7lJfqpE" target="_blank" rel="noopener">
-          <span class="r-idx"></span>
+          <span class="thumb"><img src="assets/thumbs/yt_Rf8m7lJfqpE.webp" alt="" loading="lazy" decoding="async"></span><span class="r-idx"></span>
           <span class="reel-main">
             <span class="reel-title">「異変」</span>
             <span class="reel-meta">9周年記念PV · Electronic / Cyberpunk</span>
+          </span>
+          <span class="play">▸ <span class="en">Watch</span><span class="zh" hidden>觀看</span></span>
+        </a></li>
+      </ol>
+    </article>
+    <article id="project-mr-love" class="session" data-cat="games">
+      <div class="session-head">
+        <h3 class="artist-name">Mr Love: Queen's Choice <span class="cjk-alt">戀與製作人</span></h3>
+        <p class="genre-tag en">Game Feature Music · Papergames</p>
+        <p class="genre-tag zh" hidden>遊戲宣傳配樂 · 疊紙遊戲</p>
+      </div>
+      <p class="standout en">Music for the summer feature film of Papergames' otome hit.</p>
+      <p class="standout zh" hidden>為疊紙遊戲人氣乙女遊戲《戀與製作人》夏日資料片製作音樂。</p>
+
+      <ol class="reel-list">
+        <li><a href="https://www.youtube.com/watch?v=KQZmH5hi4ks" target="_blank" rel="noopener">
+          <span class="thumb"><img src="assets/thumbs/yt_KQZmH5hi4ks.webp" alt="" loading="lazy" decoding="async"></span><span class="r-idx"></span>
+          <span class="reel-main">
+            <span class="reel-title">DROP THE BEAT</span>
+            <span class="reel-meta"><span class="en">Summer Feature</span><span class="zh" hidden>夏日資料片</span> · Electronic</span>
           </span>
           <span class="play">▸ <span class="en">Watch</span><span class="zh" hidden>觀看</span></span>
         </a></li>
